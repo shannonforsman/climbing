@@ -8,9 +8,58 @@
 //   })
 // })
 
+var markers = {
+  taipei: {
+      lat: 40.0293099,
+      lng: -105.2399774,
+      data: 'hey',
+      layer: 'red',
+      properties : {
+        "rentals": true,
+        "tackleshop": false,
+        "fuel": false,
+        "marker-color": "#1087bf",
+        "marker-size": "large",
+        "marker-symbol": "harbor"
+      }
+  },
+  blah: {
+      lat: 40.04,
+      lng: -105.2399774,
+      data: 'blah',
+      layer: 'blue',
+      properties : {
+        "rentals": false,
+        "tackleshop": false,
+        "fuel": false,
+        "marker-color": "#1087bf",
+        "marker-size": "large",
+        "marker-symbol": "harbor"
+      }
+  },
+}
 
 
-app.controller("MapController", [ '$scope', 'leafletEvents', function($scope, leafletEvents) {
+
+app.controller("MapController", [ '$scope', 'leafletEvents', 'leafletData', function($scope, leafletEvents, leafletData) {
+    console.log(leafletData.getMap())
+    $scope.newMarkers = markers
+    $scope.filter = function(filter) {
+      var obj = {}
+      for (var key in markers) {
+        if (markers[key].properties.rentals) {
+          obj[key] = markers[key]
+        }
+      }
+      $scope.newMarkers = obj
+      console.log($scope.newMarkers)
+    }
+    $scope.$watch('newMarkers', function(newValue, oldValue) {
+      console.log('watch oldvalue', oldValue)
+      console.log('watch newvalue',newValue)
+
+      oldValue = newValue
+    });
     angular.extend($scope, {
         osloCenter: {
             lat: 40.0293099,
@@ -41,36 +90,7 @@ app.controller("MapController", [ '$scope', 'leafletEvents', function($scope, le
               mapid: 'sforsman1.na9fn83i'
           }
         },
-        markers: {
-          taipei: {
-              lat: 40.0293099,
-              lng: -105.2399774,
-              data: 'hey',
-              layer: 'red',
-              properties : {
-                "rentals": true,
-                "tackleshop": false,
-                "fuel": false,
-                "marker-color": "#1087bf",
-                "marker-size": "large",
-                "marker-symbol": "harbor"
-              }
-          },
-          blah: {
-              lat: 40.04,
-              lng: -105.2399774,
-              data: 'blah',
-              layer: 'blue',
-              properties : {
-                "rentals": true,
-                "tackleshop": false,
-                "fuel": false,
-                "marker-color": "#1087bf",
-                "marker-size": "large",
-                "marker-symbol": "harbor"
-              }
-          },
-        },
+        markers: $scope.newMarkers,
         events: {
           markers: {
             enable: leafletEvents.getAvailableMarkerEvents(),

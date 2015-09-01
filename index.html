@@ -39,14 +39,13 @@
   <body  ng-controller="MapController">
     <div id="modal"></div>
     <div>
-      <leaflet width="100%" height="400px" center="osloCenter" tiles="tiles" markers="markers" layers="layers"></leaflet>
+      <leaflet width="100%" height="400px" center="osloCenter" tiles="tiles" markers="newMarkers" layers="layers"></leaflet>
     </div>
 
     <nav class='menu-ui'>
-      <a href='#' class='active' data-filter='all'>Show all</a>
-      <a href='#' data-filter='rentals'>Rentals</a>
-      <a href='#' data-filter='tackleshop'>Tackle shop</a>
-      <a href='#' data-filter='fuel'>Fuel station</a>
+
+      <a href='#' data-filter='rentals' ng-click='filter("rentals")'>Rentals</a>
+
     </nav>
 <!--     <button type="button" ng-click="toggleLayer('red')" class="btn btn-default">Red</button>
 <button type="button" ng-click="toggleLayer('blue')" class="btn btn-default">blue</button> -->
