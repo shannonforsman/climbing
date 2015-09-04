@@ -1,1 +1,1 @@
-var app = angular.module("climbingApp", ['leaflet-directive']);
+var app = angular.module('climbingApp', [])
