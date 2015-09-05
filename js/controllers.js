@@ -10,7 +10,7 @@ app.controller('MarkerController', ['$scope', '$filter', function ($scope, $filt
     },
     'geometry': {
       'type': 'Point',
-      'coordinates': [1.0, 1.0]
+      'coordinates': [-105.2864265, 40.018228]
     }
   }, {
     'type': 'Feature',
@@ -23,7 +23,7 @@ app.controller('MarkerController', ['$scope', '$filter', function ($scope, $filt
     },
     'geometry': {
       'type': 'Point',
-      'coordinates': [2.0, 2.0]
+      'coordinates': [-105.29, 40.01]
     }
   },
     {
@@ -37,7 +37,7 @@ app.controller('MarkerController', ['$scope', '$filter', function ($scope, $filt
       },
       'geometry': {
         'type': 'Point',
-        'coordinates': [10.0, 2.0]
+        'coordinates': [-105.27, 40.02]
       }
     }]
   $scope.data = angular.copy($scope.source)
@@ -49,6 +49,7 @@ app.controller('MarkerController', ['$scope', '$filter', function ($scope, $filt
     delete $scope.search.properties.sport
     delete $scope.search.properties.bouldering
   }
+
 
   console.log($scope.search)
   $scope.$watch('search', function (newVal, oldVal) {
