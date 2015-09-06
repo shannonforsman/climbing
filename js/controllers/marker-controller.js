@@ -4,8 +4,7 @@ app.controller('MarkerController', ['$scope', '$filter', function ($scope, $filt
     'properties': {
       'id': 1,
       'hikeLength': 'medium',
-      'sport': 'yes',
-      'bouldering': 'no',
+      'type': 'sport',
       'name': 'Foo'
     },
     'geometry': {
@@ -17,8 +16,7 @@ app.controller('MarkerController', ['$scope', '$filter', function ($scope, $filt
     'properties': {
       'id': 2,
       'hikeLength': 'short',
-      'bouldering': 'yes',
-      'sport': 'no',
+      'type': 'bouldering',
       'name': 'Bar'
     },
     'geometry': {
@@ -31,8 +29,7 @@ app.controller('MarkerController', ['$scope', '$filter', function ($scope, $filt
       'properties': {
         'id': 3,
         'hikeLength': 'short',
-        'bouldering': 'yes',
-        'sport': 'no',
+        'type': 'bouldering',
         'name': 'Bar'
       },
       'geometry': {
@@ -46,17 +43,13 @@ app.controller('MarkerController', ['$scope', '$filter', function ($scope, $filt
   }
 
   $scope.allTypes = function () {
-    delete $scope.search.properties.sport
-    delete $scope.search.properties.bouldering
-  }
-  $scope.checkBoxes = function () {
-    if ($scope.search.properties.sport && $scope.search.properties.bouldering || !($scope.search.properties.sport) && !($scope.search.properties.bouldering)) {
-      delete $scope.search.properties.sport
-      delete $scope.search.properties.bouldering
-    }
+    delete $scope.search.properties.type
   }
 
   $scope.$watch('search', function (newVal, oldVal) {
+    if ($scope.search.properties.type === 'no') {
+      delete $scope.search.properties.type
+    }
     if (newVal !== oldVal) {
       $scope.data = $filter('filter')($scope.source, $scope.search)
     }
