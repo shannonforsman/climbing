@@ -1,8 +1,9 @@
 app.directive('leafletDirective', function () {
   return {
-    restrict: 'EA',
+    restrict: 'E',
     scope: {
-      data: '='
+      data: '=',
+      markerCheck: '='
     },
     replace: true,
     template: '<div></div>',
@@ -12,7 +13,26 @@ app.directive('leafletDirective', function () {
         zoom: 14
       })
 
-      
+      console.log(scope.markerCheck)
+      if (scope.markerCheck === true) {
+        console.log('hi')
+      }
+      //
+      // function onLocationFound(e) {
+      //   var radius = e.accuracy / 2
+      //
+      //   L.marker(e.latlng).addTo(map)
+      //       .bindPopup("You are within " + radius + " meters from this point").openPopup()
+      //   L.circle(e.latlng, radius).addTo(map)
+      //   console.log(e.latlng)
+      // }
+      //
+      // function onLocationError(e) {
+      //   alert(e.message)
+      // }
+
+      // map.on('locationerror', onLocationError);
+
 
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
           attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -31,6 +51,10 @@ app.directive('leafletDirective', function () {
           geojsonLayer.addData(scope.data)
         }
       }, true)
+
+      map.on('click', function(e) {
+          alert(e.latlng); // e is an event object (MouseEvent in this case)
+      });
 
       var modal = document.getElementById('modal')
 

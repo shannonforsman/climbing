@@ -49,9 +49,13 @@ app.controller('MarkerController', ['$scope', '$filter', function ($scope, $filt
     delete $scope.search.properties.sport
     delete $scope.search.properties.bouldering
   }
+  $scope.checkBoxes = function () {
+    if ($scope.search.properties.sport && $scope.search.properties.bouldering || !($scope.search.properties.sport) && !($scope.search.properties.bouldering)) {
+      delete $scope.search.properties.sport
+      delete $scope.search.properties.bouldering
+    }
+  }
 
-
-  console.log($scope.search)
   $scope.$watch('search', function (newVal, oldVal) {
     if (newVal !== oldVal) {
       $scope.data = $filter('filter')($scope.source, $scope.search)
