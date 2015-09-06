@@ -1,0 +1,13 @@
+<form ng-submit="submit(title, author, imgUrl, description)" name="submit-form">
+  <div class="col">
+    <label for="areaName">Area Name</label>
+    <input type="text" id='areaName' ng-model="areaName" required>
+    <label for="lat">Lat</label>
+    <input type="text" id='lat' ng-model="author" required>
+    <label for="long">Long</label>
+    <input type="text" id='long' ng-model="imgUrl" required>
+    <label for="description">Description</label>
+    <textarea id='description' ng-model="description" required></textarea>
+    <input type="submit" id="submit" value='Submit Post'>
+  </div>
+</form>

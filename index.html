@@ -18,7 +18,7 @@
   </style>
 </head>
 <body ng-controller='MarkerController'>
-
+  <a href="#">home</a>
   Name: <input ng-model="search.properties.name" placeholder="Name" />
   <select id="" ng-model="search.properties.hikeLength">
     <option value="short">short</option>
@@ -41,17 +41,21 @@
   <input type="checkbox" ng-click=allTypes() ng-true-value="'yes'" ng-false-value="'no'">
   <button id="add-marker" ng-click="addMarker()">add marker</button>
 
+
   add marker
   <input type="checkbox" ng-click="markerCheck()" ng-model="addMarkerCheck" ng-true-value="true" ng-false-value="false">
-  <div id="modal"></div>
-  <div ng-view></div>
+<!--   <div id="modal"></div>
+ -->  <div ng-view></div>
+
+  <a href="#/climbs/add-climb">Add a Climb</a>
 
 <leaflet-directive id="map" data="data" marker-check="addMarkerCheck"></leaflet-directive>
 <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.js'></script>
 <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js'></script>
 <script src="js/app.js"></script>
-<script src="js/controllers.js"></script>
+<script src="js/controllers/marker-controller.js"></script>
+<script src="js/controllers/new-climb-controller.js"></script>
 <script src="js/directives.js"></script>
 <script src='js/routes.js'></script>
 </body>
