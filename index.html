@@ -32,17 +32,13 @@
   sport
   <input type="checkbox" ng-model="search.properties.type" ng-true-value="'sport'" ng-false-value="'no'">
 
-  all
-  <input type="checkbox" ng-click=allTypes() ng-true-value="'yes'" ng-false-value="'no'">
-  <button id="add-marker" ng-click="addMarker()">add marker</button>
+<!--   all
+<input type="checkbox" ng-click=allTypes() ng-true-value="'yes'" ng-false-value="'no'">
+<button id="add-marker" ng-click="addMarker()">add marker</button> -->
 
+<div ng-view></div>
 
-  add marker
-  <input type="checkbox" ng-click="markerCheck()" ng-model="addMarkerCheck" ng-true-value="true" ng-false-value="false">
-<!--   <div id="modal"></div>
- -->  <div ng-view></div>
-
-  <a href="#/climbs/add-climb">Add a Climb</a>
+<a href="#/climbs/add-climb">Add a Climb</a>
 
 <leaflet-directive id="map" data="data" marker-check="addMarkerCheck"></leaflet-directive>
 <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>

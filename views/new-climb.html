@@ -1,4 +1,4 @@
-<form ng-submit="submit(areaName, lat, long, description, hikeLength, sport, bouldering )" name="submit-form">
+<form ng-submit="submit(areaName, lat, long, description, hikeLength, type)" name="submit-form">
   <div class="col">
     <label for="areaName">Area Name</label>
     <input type="text" id='areaName' ng-model="areaName" required>
@@ -16,10 +16,10 @@
     </select>
 
     bouldering
-    <input type="checkbox" ng-model="bouldering" ng-true-value="'yes'" ng-false-value="'no'">
+    <input type="checkbox" ng-model="type" ng-true-value="'bouldering'">
 
     sport
-    <input type="checkbox" ng-model="sport" ng-true-value="'yes'" ng-false-value="'no'">
+    <input type="checkbox" ng-model="type" ng-true-value="'sport'">
     <input type="submit" id="submit" value='Submit Post'>
   </div>
 </form>

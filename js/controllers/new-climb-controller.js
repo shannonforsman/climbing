@@ -1,17 +1,16 @@
-app.controller('NewClimbController', ['$scope', '$http', function ($scope, $http) {
-  $scope.submit = function(areaName, lat, long, description, hikeLength, sport, bouldering) {
+app.controller('NewClimbController', ['$scope', '$http', 'ClimbMarkers', function ($scope, $http, ClimbMarkers) {
+  $scope.submit = function(areaName, lat, long, description, hikeLength, type) {
     var obj = {}
     var props = {}
     var geom = {}
 
     geom['type'] = 'Point'
     geom['coordinates'] = []
-    geom['coordinates'][0] = long
-    geom['coordinates'][1] = lat
+    geom['coordinates'][0] = parseFloat(long)
+    geom['coordinates'][1] = parseFloat(lat)
 
     props['hikeLength'] = hikeLength
-    props['sport'] = sport
-    props['bouldering'] = bouldering
+    props['type'] = type
     props['name'] = areaName
 
     obj['properties'] = props
@@ -19,6 +18,8 @@ app.controller('NewClimbController', ['$scope', '$http', function ($scope, $http
     obj['geometry'] = geom
 
     console.log(obj)
+
+    ClimbMarkers.post(obj)
 
     // $http.post(link + 'articles', obj).
     // then(function(response) {

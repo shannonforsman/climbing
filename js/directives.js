@@ -1,4 +1,4 @@
-app.directive('leafletDirective', function () {
+app.directive('leafletDirective', ['ClimbInfo', function (ClimbInfo) {
   return {
     restrict: 'E',
     scope: {
@@ -12,27 +12,6 @@ app.directive('leafletDirective', function () {
         center: [40.018228,-105.2864265],
         zoom: 14
       })
-
-      console.log(scope.markerCheck)
-      if (scope.markerCheck === true) {
-        console.log('hi')
-      }
-      //
-      // function onLocationFound(e) {
-      //   var radius = e.accuracy / 2
-      //
-      //   L.marker(e.latlng).addTo(map)
-      //       .bindPopup("You are within " + radius + " meters from this point").openPopup()
-      //   L.circle(e.latlng, radius).addTo(map)
-      //   console.log(e.latlng)
-      // }
-      //
-      // function onLocationError(e) {
-      //   alert(e.message)
-      // }
-
-      // map.on('locationerror', onLocationError);
-
 
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
           attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -52,21 +31,40 @@ app.directive('leafletDirective', function () {
         }
       }, true)
 
-      map.on('click', function(e) {
-          alert(e.latlng); // e is an event object (MouseEvent in this case)
-      });
-
-      var modal = document.getElementById('modal')
+      // var modal = document.getElementById('modal')
 
       function onEachFeature (feature, layer) {
         layer.on({
-          click: function () {
-            modal.innerHTML = feature.properties.id
-            console.log(feature.properties.id)
+          click: function (e) {
+            ClimbInfo.post({ _id: feature._id})
+            .then(function (climbInfo) {
+              console.log('climbInfo', climbInfo)
+            })
           }
         })
       }
-
     }
   }
-})
+}])
+
+
+//
+// map.on('click', function(e) {
+//     alert(e.latlng); // e is an event object (MouseEvent in this case)
+// });
+
+      //
+      // function onLocationFound(e) {
+      //   var radius = e.accuracy / 2
+      //
+      //   L.marker(e.latlng).addTo(map)
+      //       .bindPopup("You are within " + radius + " meters from this point").openPopup()
+      //   L.circle(e.latlng, radius).addTo(map)
+      //   console.log(e.latlng)
+      // }
+      //
+      // function onLocationError(e) {
+      //   alert(e.message)
+      // }
+
+      // map.on('locationerror', onLocationError);
