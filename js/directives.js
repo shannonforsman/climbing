@@ -1,4 +1,4 @@
-app.directive('leafletDirective', ['ClimbInfo', function (ClimbInfo) {
+app.directive('leafletDirective', function () {
   return {
     restrict: 'E',
     scope: {
@@ -36,16 +36,16 @@ app.directive('leafletDirective', ['ClimbInfo', function (ClimbInfo) {
       function onEachFeature (feature, layer) {
         layer.on({
           click: function (e) {
-            ClimbInfo.post({ _id: feature._id})
-            .then(function (climbInfo) {
-              console.log('climbInfo', climbInfo)
-            })
+            window.location="/#/climbs/" + feature._id + "/show"
+
           }
         })
       }
     }
   }
-}])
+})
+
+
 
 
 //

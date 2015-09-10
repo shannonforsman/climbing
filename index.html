@@ -5,20 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
     body { margin: 0;}
-    #modal {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      background-color: #fff;
-      top: 50px;
-      left: 0;
-      z-index: 200;
-    }
+
     body, html, .leaflet-container { height: 100%; }
   </style>
 </head>
 <body ng-controller='MarkerController'>
-  <a href="#">home</a>
+  <a href="#/climbs">home</a>
   Name: <input ng-model="search.properties.name" placeholder="Name" />
   <select id="" ng-model="search.properties.hikeLength">
     <option value="short">short</option>
@@ -38,7 +30,7 @@
 
 <div ng-view></div>
 
-<a href="#/climbs/add-climb">Add a Climb</a>
+<a href="#/climbs/new">Add a Climb</a>
 
 <leaflet-directive id="map" data="data" marker-check="addMarkerCheck"></leaflet-directive>
 <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
@@ -48,6 +40,8 @@
 <script src="js/services.js"></script>
 <script src="js/controllers/marker-controller.js"></script>
 <script src="js/controllers/new-climb-controller.js"></script>
+<script src="js/controllers/climb-info-controller.js"></script>
+<script src="js/controllers/edit-climb-controller.js"></script>
 <script src="js/directives.js"></script>
 <script src='js/routes.js'></script>
 </body>

@@ -1,0 +1,40 @@
+<style>
+  .edit {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    top: 250px;
+    left: 0;
+    z-index: 200;
+  }
+</style>
+
+hi{{currentClimb}}
+<div class="edit">
+  <form ng-submit="updateArea(currentClimb.properties.name, currentClimb.geometry.coordinates[1], currentClimb.geometry.coordinates[0], description, currentClimb.properties.hikeLength, currentClimb.properties.type, currentClimb._id)" name="submit-form">
+    <div class="col">
+      <label for="areaName">Area Name</label>
+      <input type="text" id='areaName' ng-model="areaName"  ng-value="currentClimb.properties.name" required><br>
+      <label for="lat" >Lat</label>
+      <input type="text" id='lat' ng-model="lat" ng-value="currentClimb.geometry.coordinates[1]" required><br>
+      <label for="long">Long</label>
+      <input type="text" id='long' ng-model="long" ng-value="currentClimb.geometry.coordinates[0]">
+      <label for="description">Description</label>
+      <textarea id='description' ng-model="description"></textarea>
+
+      <select ng-model="currentClimb.properties.hikeLength">
+        <option value="short">short</option>
+        <option value="medium">medium</option>
+        <option value="long">long</option>
+      </select>
+      <br>
+      bouldering
+      <input type="checkbox" ng-model="currentClimb.properties.type" ng-true-value="'bouldering'"><br>
+
+      sport
+      <input type="checkbox" ng-model="currentClimb.properties.type" ng-true-value="'sport'"><br>
+      <input type="submit" id="submit" value='Submit Post'>
+    </div>
+  </form>
+</div>

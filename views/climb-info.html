@@ -1,0 +1,19 @@
+<style>
+  #modal {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    top: 250px;
+    left: 0;
+    z-index: 200;
+  }
+</style>
+
+<div id="modal">
+  <b>Hike Length:</b> {{climbData.properties.hikeLength}}<br>
+  <b>hike length:</b> {{climbData.properties.name}}
+
+  <a href="/#/climbs/{{climbData._id}}/edit">edit</a>
+
+</div>
