@@ -1,0 +1,29 @@
+header {
+  .fa {
+    float: right;
+  }
+  .inner {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .filter {
+    float: right;
+  }
+  display: block;
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  background: $dark;
+  color: $white;
+  a {
+    color: $white;
+  }
+  .hide {
+    display: none;
+    &.show {
+      display: block;
+      padding: 20px;
+    }
+  }
+}

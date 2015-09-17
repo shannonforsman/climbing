@@ -1,8 +1,8 @@
 <style>
   .edit {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 800px;
+    height: 500px;
     background-color: #fff;
     top: 250px;
     left: 0;
@@ -10,31 +10,91 @@
   }
 </style>
 
-hi{{currentClimb}}
 <div class="edit">
-  <form ng-submit="updateArea(currentClimb.properties.name, currentClimb.geometry.coordinates[1], currentClimb.geometry.coordinates[0], description, currentClimb.properties.hikeLength, currentClimb.properties.type, currentClimb._id)" name="submit-form">
-    <div class="col">
-      <label for="areaName">Area Name</label>
-      <input type="text" id='areaName' ng-model="areaName"  ng-value="currentClimb.properties.name" required><br>
-      <label for="lat" >Lat</label>
-      <input type="text" id='lat' ng-model="lat" ng-value="currentClimb.geometry.coordinates[1]" required><br>
-      <label for="long">Long</label>
-      <input type="text" id='long' ng-model="long" ng-value="currentClimb.geometry.coordinates[0]">
-      <label for="description">Description</label>
-      <textarea id='description' ng-model="description"></textarea>
-
-      <select ng-model="currentClimb.properties.hikeLength">
-        <option value="short">short</option>
-        <option value="medium">medium</option>
-        <option value="long">long</option>
-      </select>
-      <br>
-      bouldering
-      <input type="checkbox" ng-model="currentClimb.properties.type" ng-true-value="'bouldering'"><br>
-
-      sport
-      <input type="checkbox" ng-model="currentClimb.properties.type" ng-true-value="'sport'"><br>
+  <form ng-submit="updateArea(currentClimb)" name="submit-form">
+      <div class="row">
+        <label for="areaName">Area Name</label>
+        <input type="text" id='areaName' ng-model="currentClimb.properties.name" ng-value="currentClimb.properties.name">
+      </div>
+      <div class="row">
+        <label for="genLocation">General Location</label>
+        <input type="text" id='genLocation' ng-model="currentClimb.properties.genLocation" required>
+      </div>
+      <div class="row">
+        <label for="lat">Lat</label>
+        <input type="text" id='lat' ng-model="currentClimb.geometry.coordinates[1]" required>
+      </div>
+      <div class="row">
+        <label for="long">Long</label>
+        <input type="text" id='long' ng-model="currentClimb.geometry.coordinates[0]" required>
+      </div>
+      <div class="row">
+        <label for="description">Description</label>
+        <textarea id='description' ng-model="currentClimb.properties.description" rows="4" cols="50" required>{{currentClimb.properties.description}}</textarea>
+      </div>
+      <div class="row">
+        <label for="hike">Hike Length</label>
+        <select id="hike" ng-model="currentClimb.properties.hikeLength" ng-init="hikeLength='currentClimb.properties.hikeLength'">
+          <option value="select">select</option>
+          <option value="short">short</option>
+          <option value="medium">medium</option>
+          <option value="long">long</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="size">Area Size</label>
+        <select id="size" ng-model="currentClimb.properties.size" ng-init="climb.size='currentClimb.properties.size'">
+          <option value="select">select</option>
+          <option value="small">small</option>
+          <option value="medium">medium</option>
+          <option value="large">large</option>
+        </select>
+      </div>
+      <div class="row">
+        <label>
+          Bouldering
+          <input id="bouldering" type="radio" ng-model="currentClimb.properties.type" ng-value="'bouldering'">
+        </label>
+        <label>
+          Sport
+          <input id="sport" type="radio" ng-model="currentClimb.properties.type" ng-value="'sport'">
+        </label>
+      </div>
+      <div class="row">
+        <label>
+          AM Shade
+          <input id="bouldering" type="radio" ng-model="currentClimb.properties.shade" ng-value="'AM'">
+        </label>
+        <label>
+          PM Shade
+          <input id="sport" type="radio" ng-model="currentClimb.properties.shade" ng-value="'PM'">
+        </label>
+      </div>
+      <div class="row">
+        <label for="level">Climbing Level area is best suited for</label>
+        <select id="level" ng-model="currentClimb.properties.level" ng-init="level='currentClimb.properties.level'">
+          <option value="all">all</option>
+          <option value="Beginner">beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="expert">Expert</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="popular">Popular Area</label>
+        {{currentClimb.properties}}
+        <input type="checkbox" id="popular" ng-model="currentClimb.properties.popular" ng-checked="currentClimb.properties.popular">
+      </div>
+      <div class="row" ng-show="{{currentClimb.images}}">
+        <div class="images" ng-repeat="img in currentClimb.images">
+          <img ng-src="{{img.url}}" alt="">
+          <input type="url" ng-model="img.url" value="{{img.url}}"><a ng-click="deleteImage(img.id)">delete</a>
+        </div>
+        <a ng-click="addImage()">Add another image</a>
+      </div>
       <input type="submit" id="submit" value='Submit Post'>
-    </div>
   </form>
+  <button ng-click="deleteMarker('http://localhost:3000/climbing-markers/' + currentClimb.id + '/delete')">delete</button>
+</div>
+
+
 </div>

@@ -1,19 +1,34 @@
 <style>
   #modal {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 800px;
+    height: 100vh;
     background-color: #fff;
-    top: 250px;
+    top: 100px;
     left: 0;
     z-index: 200;
   }
+  .weather {
+    float: left;
+    position: relative;
+  }
+
 </style>
 
 <div id="modal">
-  <b>Hike Length:</b> {{climbData.properties.hikeLength}}<br>
-  <b>hike length:</b> {{climbData.properties.name}}
+  <image-carousel ng-show="climbData.images" images="climbData.images"></image-carousel>
 
-  <a href="/#/climbs/{{climbData._id}}/edit">edit</a>
+  <div class="weather" ng-repeat="weather in weatherData | limitTo:5">
+    <p>time: {{weather.FCTTIME.hour > 0 && weather.FCTTIME.hour < 13 ? weather.FCTTIME.hour + ":00 AM" : (weather.FCTTIME.hour == 0) ? 12 + ":00 AM" : weather.FCTTIME.hour-12 + ":00 PM"}}</p>
+    <p>{{weather.temp.english + "°F"}}</p>
+    <p>humidity: {{weather.humidity + "%"}}</p>
+    <p>{{weather.condition}}</p>
+    <img ng-src="{{weather.icon_url}}" alt="">
+  </div>
+
+
+  <b>Hike Length:</b> {{climbData.properties.hikeLength}}<br>
+  <b>Area Name:</b> {{climbData.properties.name}}<br><br><br>
+  <a href="/#/climbs/{{climbData.id}}/edit">edit</a>
 
 </div>

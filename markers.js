@@ -63,3 +63,9 @@
 ]
 }
 },
+
+
+
+
+
+//make the markerObj service an http request and then update/delete do that to the object as well as the the actual one

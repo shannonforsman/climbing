@@ -2,35 +2,75 @@
 <html ng-app="climbingApp">
 <head>
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
     body { margin: 0;}
 
-    body, html, .leaflet-container { height: 100%; }
+    body, html, .leaflet-container { height: 100vh; }
   </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-controller='MarkerController'>
-  <a href="#/climbs">home</a>
-  Name: <input ng-model="search.properties.name" placeholder="Name" />
-  <select id="" ng-model="search.properties.hikeLength">
-    <option value="short">short</option>
-    <option value="medium">medium</option>
-    <option value="long">long</option>
-  </select>
+<header>
 
-  bouldering
-  <input type="checkbox" ng-model="search.properties.type" ng-true-value="'bouldering'" ng-false-value="'no'">
 
-  sport
-  <input type="checkbox" ng-model="search.properties.type" ng-true-value="'sport'" ng-false-value="'no'">
+  <div class="inner">
+    <span class="filter" ng-click="showFilters()">Filter</span>
+    <a href="#/climbs/new">Add a Climb</a>
+    <a href="#/climbs"><h1>Cluster</h1></a>
+  </div>
+  <div class="hide">
+    <div class="inner">
+      Name: <input ng-model="search.properties.name" />
+      Hike Length:
+      <select id="" ng-model="search.properties.hikeLength" ng-init="search.properties.hikeLength=''">
+        <option value="">all</option>
+        <option value="short">short</option>
+        <option value="medium">medium</option>
+        <option value="long">long</option>
+      </select>
 
-<!--   all
-<input type="checkbox" ng-click=allTypes() ng-true-value="'yes'" ng-false-value="'no'">
-<button id="add-marker" ng-click="addMarker()">add marker</button> -->
+      Area Size:
+      <select ng-model="search.properties.size" ng-init="search.properties.size=''">
+        <option value="">all</option>
+        <option value="medium">medium</option>
+        <option value="large">large</option>
+      </select>
+
+      AM/PM Shade:
+      <select ng-model="search.properties.shade" ng-init="search.properties.shade = ''">
+        <option value="">either</option>
+        <option value="AM">AM</option>
+        <option value="PM">PM</option>
+      </select>
+
+      Climbing Level:
+      <select ng-model="search.properties.level" ng-init="search.properties.level = ''">
+        <option value="">all</option>
+        <option value="Beginner">beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="expert">Expert</option>
+      </select>
+
+      Most Popular:
+      <input type="checkbox" ng-model="search.properties.popular" ng-true-value="true" ng-false-value="false">
+
+      bouldering
+      <input type="checkbox" ng-model="search.properties.type" ng-true-value="'bouldering'" ng-false-value="'no'">
+
+      sport
+      <input type="checkbox" ng-model="search.properties.type" ng-true-value="'sport'" ng-false-value="'no'">
+
+
+
+      <button ng-click=reset()>Reset</button>
+    </div>
+  </div>
+</header>
 
 <div ng-view></div>
 
-<a href="#/climbs/new">Add a Climb</a>
 
 <leaflet-directive id="map" data="data" marker-check="addMarkerCheck"></leaflet-directive>
 <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
@@ -42,7 +82,8 @@
 <script src="js/controllers/new-climb-controller.js"></script>
 <script src="js/controllers/climb-info-controller.js"></script>
 <script src="js/controllers/edit-climb-controller.js"></script>
-<script src="js/directives.js"></script>
+<script src="js/directives/leaflet.js"></script>
+<script src="js/directives/carousel/carousel.js"></script>
 <script src='js/routes.js'></script>
 </body>
 </html>
