@@ -1,5 +1,5 @@
 app.factory('ClimbMarkers', ['$http', '$q', '$route', '$location', function ($http, $q, $route, $location) {
-  var link = 'http://localhost:3000/climbing-markers'
+  var link = 'https://limitless-citadel-5215.herokuapp.com/climbing-markers'
   var climbs = {}
 
   climbs.get = function () {
@@ -17,6 +17,7 @@ app.factory('ClimbMarkers', ['$http', '$q', '$route', '$location', function ($ht
 
   climbs.post = function(obj) {
     $http.post(link, obj).then(function(response){
+
       $route.reload()
     })
   }
@@ -27,8 +28,9 @@ app.factory('ClimbMarkers', ['$http', '$q', '$route', '$location', function ($ht
     })
   }
 
-  climbs.delete = function(otherlink) {
-    $http.delete(otherlink).then(function(response) {
+  climbs.delete = function(id) {
+    link = link + '/delete'
+    $http.post(link, {'id': id}).then(function(response) {
     })
     window.location="/#/climbs/"
 

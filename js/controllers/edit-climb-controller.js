@@ -33,9 +33,9 @@ $scope.deleteImage = function(id) {
 }
 
 
-$scope.deleteMarker = function(link) {
+$scope.deleteMarker = function(id) {
   MarkerObj.arr.splice($scope.indexOfClimb, 1)
-  ClimbMarkers.delete(link)
+  ClimbMarkers.delete(id)
 }
 
 $scope.updateArea = function(climbObj) {
