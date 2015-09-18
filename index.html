@@ -7,7 +7,9 @@
   <style>
     body { margin: 0;}
 
-    body, html, .leaflet-container { height: 100vh; }
+    body, html {height: 100%;}
+
+     .leaflet-container { height: 100vh; }
   </style>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -15,8 +17,8 @@
 <header>
 
   <div class="inner">
-    <a class="filter" ng-click="showFilters()">Filter</a>
-    <a href="#/climbs/new">Add a Climb</a>
+    <a class="filter" ng-click="showFilters()">filter</a>
+    <a class="add-climb" href="#/climbs/new">+</a>
     <a href="#/climbs"><h1>Cluster</h1></a>
   </div>
   <div class="hide">

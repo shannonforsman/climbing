@@ -1,0 +1,17 @@
+form {
+  width: 100%;
+  .row {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    input, textarea {
+      width: 100%;
+      float: right;
+      display: block;
+      margin-bottom: 20px;
+      padding: 5px 10px;
+      border: none;
+      line-height: 20px;
+    }
+  }
+}

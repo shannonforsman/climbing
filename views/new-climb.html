@@ -1,29 +1,20 @@
-<style>
-  .row {
-    margin:20px;
-  }
-</style>
-<div class="col">
+<div class="content">
+  <h2>Add a Climb</h2>
 <form ng-submit="submit(climb)" name="submit-form">
     <div class="row">
-      <label for="areaName">Area Name</label>
-      <input type="text" id='areaName' ng-model="climb.areaName" required>
+      <input type="text" id='areaName' ng-model="climb.areaName" required placeholder="Area Name">
     </div>
     <div class="row">
-      <label for="genLocation">General Location</label>
-      <input type="text" id='genLocation' ng-model="climb.genLocation" required>
+      <input type="text" id='genLocation' ng-model="climb.genLocation" required placeholder="General Area">
     </div>
     <div class="row">
-      <label for="lat">Lat</label>
-      <input type="text" id='lat' ng-model="climb.lat" required>
+      <input type="text" id='lat' ng-model="climb.lat" required placeholder="Latitude">
     </div>
     <div class="row">
-      <label for="long">Long</label>
-      <input type="text" id='long' ng-model="climb.long" required>
+      <input type="text" id='long' ng-model="climb.long" required placeholder="Longitude">
     </div>
     <div class="row">
-      <label for="description">Description</label>
-      <textarea id='description' ng-model="climb.description" rows="4" cols="50" required></textarea>
+      <textarea id='description' ng-model="climb.description" rows="4" cols="50" required placeholder="Description"></textarea>
     </div>
     <div class="row">
       <label for="hike">Hike Length</label>

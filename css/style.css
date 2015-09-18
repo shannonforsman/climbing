@@ -1,26 +1,150 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900);
+@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
 *, :after, :before {
   box-sizing: border-box; }
 
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
 body {
-  font-family: sans-serif; }
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: 'lato'; }
 
 h1 {
   text-align: center;
-  font-family: 'Montserrat';
+  font-weight: 700;
+  font-family: 'lato';
   text-transform: uppercase;
-  letter-spacing: 8px; }
+  letter-spacing: 8px;
+  font-size: 32px;
+  display: inline; }
+
+header {
+  text-align: center; }
+
+h2 {
+  font-family: 'lato';
+  font-weight: 800;
+  color: #2D3140;
+  letter-spacing: 4px;
+  font-size: 20px; }
 
 a {
   text-decoration: none;
   color: #4bf4da; }
 
-.col {
-  margin-top: 200px; }
+.add-climb {
+  font-size: 48px;
+  display: inline-block;
+  float: left;
+  line-height: 0.8; }
+
+.filter {
+  float: right;
+  font-weight: 300;
+  border: 2px solid #73DAB9;
+  padding: 2px 6px 2px 12px;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  line-height: 1;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 8px; }
+
+form input, form textarea {
+  font-family: 'news cycle';
+  font-size: 14px;
+  color: black;
+  letter-spacing: 2px;
+  font-weight: 300; }
+  form input.placeholder, form textarea.placeholder {
+    color: #4bcfa5;
+    font-family: 'news cycle';
+    text-transform: lowercase; }
+  form input:-moz-placeholder, form textarea:-moz-placeholder {
+    color: #4bcfa5;
+    font-family: 'news cycle';
+    text-transform: lowercase; }
+  form input::-moz-placeholder, form textarea::-moz-placeholder {
+    color: #4bcfa5;
+    font-family: 'news cycle';
+    text-transform: lowercase; }
+  form input:-ms-input-placeholder, form textarea:-ms-input-placeholder {
+    color: #4bcfa5;
+    font-family: 'news cycle';
+    text-transform: lowercase; }
+  form input::-webkit-input-placeholder, form textarea::-webkit-input-placeholder {
+    color: #4bcfa5;
+    font-family: 'news cycle';
+    text-transform: lowercase; }
+
+form label {
+  font-family: 'news cycle';
+  text-transform: lowercase;
+  color: #2D3140;
+  letter-spacing: 2px;
+  font-weight: 700; }
+
+.content {
+  background: rgba(115, 218, 185, 0.75);
+  margin-top: 10vh;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  height: 90vh;
+  overflow: scroll;
+  padding: 32px; }
+
+#map {
+  position: absolute;
+  width: 100%; }
 
 header {
   display: block;
-  position: absolute;
+  position: fixed;
   z-index: 20;
   width: 100%;
   background: #2D3140;
@@ -34,7 +158,7 @@ header {
   header .inner {
     width: 100%;
     margin: 0 auto;
-    padding: 20px; }
+    padding: 24px; }
   header .filter {
     float: right; }
   header .hide {
@@ -42,3 +166,18 @@ header {
     header .hide.show {
       display: block;
       padding: 20px; }
+
+form {
+  width: 100%; }
+  form .row {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px; }
+    form .row input, form .row textarea {
+      width: 100%;
+      float: right;
+      display: block;
+      margin-bottom: 20px;
+      padding: 5px 10px;
+      border: none;
+      line-height: 20px; }

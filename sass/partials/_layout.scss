@@ -1,3 +1,15 @@
-.col {
-  margin-top: 200px;
+.content {
+  background: rgba($mint, .75);
+  margin-top: 10vh;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  height: 90vh;
+  overflow: scroll;
+  padding: 32px;
+}
+
+#map {
+  position: absolute;
+  width: 100%;
 }
