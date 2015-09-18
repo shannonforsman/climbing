@@ -6,10 +6,6 @@ app.controller('NewClimbController', ['$scope', '$http', 'ClimbMarkers', 'Marker
     $scope.imgArr.push({'id': Date.now() })
   }
 
-  // $scope.showImageButton() = function(image) {
-  //   return image.id === $scope.imgArr[$scope.imgArr.length-1].id
-  // }
-
   $scope.submit = function(climbObj) {
     var obj = {}
     var props = {}

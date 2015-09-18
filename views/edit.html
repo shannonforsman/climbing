@@ -84,7 +84,12 @@
         {{currentClimb.properties}}
         <input type="checkbox" id="popular" ng-model="currentClimb.properties.popular" ng-checked="currentClimb.properties.popular">
       </div>
-      <div class="row" ng-show="{{currentClimb.images}}">
+      <div class="row">
+        <div ng-repeat="img in imgArr" ng-show="!currentClimb.images">
+          <input type="url" ng-model="img.url" name="image" >
+          <img ng-src="{{img.url}}" alt="">
+          <a ng-click="deleteImage(img.id)">delete</a>
+        </div>
         <div class="images" ng-repeat="img in currentClimb.images">
           <img ng-src="{{img.url}}" alt="">
           <input type="url" ng-model="img.url" value="{{img.url}}"><a ng-click="deleteImage(img.id)">delete</a>

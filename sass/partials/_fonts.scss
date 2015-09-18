@@ -1,6 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400);
+
+body {
+  font-family: sans-serif;
+}
 h1 {
   text-align: center;
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  letter-spacing: 8px;
 }
 a {
   text-decoration: none;
+  color: $link-blue;
 }

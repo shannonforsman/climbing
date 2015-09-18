@@ -1,40 +1,44 @@
 app.controller('EditClimbController', ['$scope', '$routeParams', 'ClimbMarkers', 'MarkerObj', function ($scope, $routeParams, ClimbMarkers, MarkerObj) {
 
-
 MarkerObj.arr.forEach(function(el, index) {
   if (parseInt(el.id) === parseInt($routeParams.id)) {
-
     $scope.currentClimb = el
-    console.log($scope.currentClimb)
     $scope.indexOfClimb = index
    }
 })
 
+$scope.imgArr = [{id: 'img1'}]
+
 $scope.addImage = function() {
-  $scope.currentClimb.images.push({'id': Date.now()})
+  $scope.currentClimb.images ? $scope.currentClimb.images.push({'id': Date.now()}) : $scope.imgArr.push({'id': Date.now() })
 }
 
 $scope.deleteImage = function(id) {
   var indexOfImage
-  console.log('hi')
-  $scope.currentClimb.images.forEach(function(el, index) {
-    console.log(el)
-    if (id == el.id) {
-      indexOfImage = index
-    }
-  })
-  console.log(indexOfImage)
-  $scope.currentClimb.images.splice(indexOfImage, 1)
+  if (!$scope.currentClimb.images) {
+    $scope.imgArr.forEach(function(el, index) {
+      if (id == el.id) {
+        indexOfImage = index
+      }
+    })
+    $scope.imgArr.splice(indexOfImage, 1)
+  } else {
+    $scope.currentClimb.images.forEach(function(el, index) {
+      if (id == el.id) {
+        indexOfImage = index
+      }
+    })
+    $scope.currentClimb.images.splice(indexOfImage, 1)
+  }
 }
+
 
 $scope.deleteMarker = function(link) {
   MarkerObj.arr.splice($scope.indexOfClimb, 1)
   ClimbMarkers.delete(link)
 }
 
-
 $scope.updateArea = function(climbObj) {
-  console.log('start', climbObj)
   var obj = {}
   var props = {}
   var geom = {}
@@ -43,8 +47,6 @@ $scope.updateArea = function(climbObj) {
   geom['coordinates'] = []
   geom['coordinates'][0] = parseFloat(climbObj.geometry.coordinates[0])
   geom['coordinates'][1] = parseFloat(climbObj.geometry.coordinates[1])
-
-  console.log('start', climbObj)
 
   props['name'] = climbObj.properties.name
   props['genLocation'] = climbObj.properties.genLocation
@@ -56,10 +58,10 @@ $scope.updateArea = function(climbObj) {
   props['popular'] = climbObj.properties.popular
   props['size'] = climbObj.properties.size
 
-  if ($scope.currentClimb.images) {
-    console.log('hi')
-    obj['images'] = $scope.currentClimb.images
+  if ($scope.currentClimb.images || $scope.imgArr) {
+    obj['images'] = $scope.currentClimb.images || $scope.imgArr
   }
+
   obj['properties'] = props
   obj['type'] = 'Feature'
   obj['geometry'] = geom

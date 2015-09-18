@@ -1,4 +1,16 @@
 header {
+  display: block;
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  background: $dark;
+  h1 {
+    color: $white;
+  }
+  top: 0;
+  a {
+    color: $white;
+  }
   .fa {
     float: right;
   }
@@ -9,15 +21,6 @@ header {
   }
   .filter {
     float: right;
-  }
-  display: block;
-  position: absolute;
-  z-index: 20;
-  width: 100%;
-  background: $dark;
-  color: $white;
-  a {
-    color: $white;
   }
   .hide {
     display: none;

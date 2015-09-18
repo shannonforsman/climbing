@@ -14,9 +14,8 @@
 <body ng-controller='MarkerController'>
 <header>
 
-
   <div class="inner">
-    <span class="filter" ng-click="showFilters()">Filter</span>
+    <a class="filter" ng-click="showFilters()">Filter</a>
     <a href="#/climbs/new">Add a Climb</a>
     <a href="#/climbs"><h1>Cluster</h1></a>
   </div>
@@ -34,6 +33,7 @@
       Area Size:
       <select ng-model="search.properties.size" ng-init="search.properties.size=''">
         <option value="">all</option>
+        <option value="small">medium</option>
         <option value="medium">medium</option>
         <option value="large">large</option>
       </select>
