@@ -1,10 +1,21 @@
-app.controller('MarkerController', ['$scope', '$filter', 'ClimbMarkers', 'MarkerObj', function ($scope, $filter, ClimbMarkers, MarkerObj) {
+app.controller('MarkerController', ['Path', '$scope', '$filter', '$location', 'ClimbMarkers', 'MarkerObj', function (Path, $scope, $filter, $location, ClimbMarkers, MarkerObj) {
 
   $scope.showFilters = function() {
     var hide = document.querySelector('.hide')
     hide.classList.toggle('show')
+    window.location="/#/climbs/"
   }
 
+
+    $scope.path = function() {
+      return Path.location === "/climbs/new"
+    }
+
+
+    //  $scope.path = window.location.hash
+  // $scope.location = function() {
+  //   $location.path() === '/climbs/new'
+  // }
   ClimbMarkers.get()
   .then(function (markers) {
     MarkerObj.arr = markers

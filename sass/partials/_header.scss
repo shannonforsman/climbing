@@ -4,6 +4,8 @@ header {
   z-index: 20;
   width: 100%;
   background: $dark;
+  @include linearGradient($dark, lighten($dark, 3));
+
   h1 {
     color: $white;
   }
@@ -16,17 +18,36 @@ header {
   }
   .inner {
     width: 100%;
-    margin: 0 auto;
+    position: relative;
     padding: 24px;
-  }
-  .filter {
-    float: right;
   }
   .hide {
     display: none;
     &.show {
       display: block;
-      padding: 20px;
     }
   }
+
+  .search {
+    input {
+      width: 100%;
+      border: 0;
+      padding: 10px 20px;
+      background-color: $grey;
+      text-align: center;
+      outline: none;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 4px;
+      color: lighten( $dark, 60% );
+      @include input-placeholder {
+        color: lighten( $dark, 40% );
+        font-family: 'news cycle';
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+    }
+  }
+
 }

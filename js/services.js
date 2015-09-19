@@ -59,3 +59,9 @@ app.factory('WeatherAPI', ['$http', '$q', function ($http, $q) {
   }
   return weather
 }])
+
+app.factory('Path', ['$location', function ($location) {
+  var path = {}
+  path.location = $location.path()
+  return path
+}])

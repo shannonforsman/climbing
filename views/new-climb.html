@@ -16,7 +16,17 @@
     <div class="row">
       <textarea id='description' ng-model="climb.description" rows="4" cols="50" required placeholder="Description"></textarea>
     </div>
-    <div class="row">
+    <div class="row border">
+      <label class="half">
+        Bouldering
+        <input id="bouldering" type="radio" ng-model="climb.type" ng-value="'bouldering'">
+      </label>
+      <label class="half">
+        Sport
+        <input id="sport" type="radio" ng-model="climb.type" ng-value="'sport'">
+      </label>
+    </div>
+    <div class="row border">
       <label for="hike">Hike Length</label>
       <select id="hike" ng-model="climb.hikeLength" ng-init="climb.hikeLength='select'">
         <option value="select">select</option>
@@ -25,7 +35,7 @@
         <option value="long">long</option>
       </select>
     </div>
-    <div class="row">
+    <div class="row border">
       <label for="size">Area Size</label>
       <select id="size" ng-model="climb.size" ng-init="climb.size='select'">
         <option value="select">select</option>
@@ -34,28 +44,18 @@
         <option value="large">large</option>
       </select>
     </div>
-    <div class="row">
-      <label>
-        Bouldering
-        <input id="bouldering" type="radio" ng-model="climb.type" ng-value="'bouldering'">
-      </label>
-      <label>
-        Sport
-        <input id="sport" type="radio" ng-model="climb.type" ng-value="'sport'">
-      </label>
-    </div>
-    <div class="row">
-      <label>
+    <div class="row border">
+      <label class="half">
         AM Shade
         <input id="bouldering" type="radio" ng-model="climb.shade" ng-value="'AM'">
       </label>
-      <label>
+      <label class="half">
         PM Shade
         <input id="sport" type="radio" ng-model="climb.shade" ng-value="'PM'">
       </label>
     </div>
-    <div class="row">
-      <label for="level">Climbing Level area is best suited for</label>
+    <div class="row border">
+      <label for="level">Climbing Level</label>
       <select id="level" ng-model="climb.level" ng-init="climb.level='all'">
         <option value="all">all</option>
         <option value="Beginner">beginner</option>
@@ -63,18 +63,17 @@
         <option value="expert">Expert</option>
       </select>
     </div>
-    <div class="row">
+    <div class="row border">
       <label for="popular">Popular Area</label>
       <input type="checkbox" id="popular" ng-model="climb.popular" ng-true-value="true" ng-false-value="false">
     </div>
-    <div class="row">
-      <label for="images">Add Images</label>
+    <div class="row image border">
       <div ng-repeat="img in imgArr">
-        <input type="url" ng-model="img.url" name="image" >
+        <input type="url" ng-model="img.url" name="image" placeholder="Image URL">
       </div>
-      <a ng-click="addImage()">Add another image</a>
+      <a ng-click="addImage()">+ Add another image</a>
     </div>
-    <input type="submit" id="submit" value='Submit Post'>
+    <input type="submit" class="button" value='Add Climb'>
   </div>
 </form>
 

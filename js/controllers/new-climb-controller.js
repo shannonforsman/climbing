@@ -1,4 +1,6 @@
-app.controller('NewClimbController', ['$scope', '$http', 'ClimbMarkers', 'MarkerObj',  function ($scope, $http, ClimbMarkers, MarkerObj) {
+app.controller('NewClimbController', ['$location', '$scope', '$http', 'ClimbMarkers', 'MarkerObj', 'Path',  function ($location, $scope, $http, ClimbMarkers, MarkerObj, Path) {
+
+  Path.location = $location.path()
 
   $scope.imgArr = [{id: 'img1'}]
 

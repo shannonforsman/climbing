@@ -68,4 +68,89 @@
 
 
 
-//make the markerObj service an http request and then update/delete do that to the object as well as the the actual one
+app.controller('MarkerController', ['Path', '$scope', '$filter', '$location', 'ClimbMarkers', 'MarkerObj', function (Path, $scope, $filter, $location, ClimbMarkers, MarkerObj) {
+
+  $scope.path = function() {
+    return Path.location === "/climbs/new"
+  }
+
+  ClimbMarkers.get()
+  .then(function (markers) {
+    MarkerObj.arr = markers
+
+    $scope.source = MarkerObj.arr
+
+    $scope.data = MarkerObj.arr
+
+    $scope.search = {
+        'properties': {}
+    }
+
+    $scope.allTypes = function () {
+      delete $scope.search.properties.type
+    }
+
+    $scope.reset = function() {
+      $scope.search.properties = {}
+    }
+
+    $scope.$watch('data', function (newVal, oldVal) {
+      if (newVal !== oldVal) {
+        $scope.data = newVal
+      }
+    })
+
+    $scope.$watch('search', function (newVal, oldVal) {
+      if ($scope.search.properties.popular === false) {
+        delete $scope.search.properties.popular
+      }
+      if ($scope.search.properties.type === 'no') {
+        delete $scope.search.properties.type
+      }
+      if ($scope.search.properties.hikeLenth === 'all' ) {
+        delete $scope.search.properties.hikeLength
+      }
+      if (newVal !== oldVal) {
+        $scope.data = $filter('filter')($scope.source, $scope.search)
+      }
+    }, true)
+  })
+}])
+
+
+
+// app.controller('MarkerController', ['$scope', '$filter', 'ClimbMarkers', 'MarkerObj', function ($scope, $filter, ClimbMarkers, MarkerObj) {
+//   ClimbMarkers.get()
+//   .then(function (markers) {
+//     console.log(markers)
+//     $scope.source = MarkerObj.arr
+//
+//     $scope.data = angularcopy
+//     $scope.search = {
+//       'properties': {}
+//     }
+//
+//     console.log('marker', MarkerObj)
+//
+//     $scope.allTypes = function () {
+//       delete $scope.search.properties.type
+//     }
+//
+//     $scope.$watch('data', function (newVal, oldVal) {
+//       if (newVal !== oldVal) {
+//         $scope.data = newVal
+//         $scope.source = newVal
+//       }
+//     })
+//
+//     $scope.$watch('search', function (newVal, oldVal) {
+//       if ($scope.search.properties.type === 'no') {
+//         delete $scope.search.properties.type
+//       }
+//       if (newVal !== oldVal) {
+//         $scope.data = $filter('filter')($scope.source, $scope.search)
+//       }
+//     }, true)
+//   //
+//   })
+// }])

@@ -1,17 +1,43 @@
 form {
   width: 100%;
+  .row.border {
+    border-bottom: 1px solid $white;
+  }
   .row {
     width: 100%;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
     input, textarea {
       width: 100%;
       float: right;
-      display: block;
-      margin-bottom: 20px;
       padding: 5px 10px;
       border: none;
-      line-height: 20px;
+    }
+    input[type='checkbox'], input[type='radio'] {
+      display: inline;
+      width: auto;
+      float: none;
+    }
+    select {
+      border: none;
+      width: 50%;
+      float: right;
+      margin-top: 4px;
+    }
+    label.class {
+      margin-right: 0;
+      float: left;
+    }
+  }
+  .image {
+    input {
+      margin-bottom: 12px;
     }
   }
 }

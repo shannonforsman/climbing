@@ -1,11 +1,14 @@
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     .when('/climbs', {
-      templateUrl: 'views/home.html'
+      controller: 'HomeController',
+      templateUrl: 'views/home.html',
+      name: 'home'
     })
     .when('/climbs/new', {
       templateUrl: 'views/new-climb.html',
-      controller: 'NewClimbController'
+      controller: 'NewClimbController',
+      name: 'add climb'
     })
     .when('/climbs/:id', {
       templateUrl: 'views/climb-info.html',

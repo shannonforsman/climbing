@@ -1,15 +1,29 @@
-.content {
-  background: rgba($mint, .75);
-  margin-top: 10vh;
-  position: fixed;
-  width: 100%;
-  z-index: 10;
-  height: 90vh;
-  overflow: scroll;
-  padding: 32px;
+body, html {
+  height: 100%;
 }
 
 #map {
   position: absolute;
   width: 100%;
+}
+
+.leaflet-container {
+  height: 100vh;
+}
+
+.content {
+  background: rgba($mint, .75);
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  height: 100vh;
+  overflow: scroll;
+  padding: 100px 32px 32px;
+}
+
+.half {
+  width: 50%;
+  float: left;
+  clear: none;
+  margin-right:0;
 }

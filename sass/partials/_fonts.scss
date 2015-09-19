@@ -3,6 +3,7 @@
 
 body {
   font-family: 'lato';
+  line-height: 1.4;
 }
 h1 {
   text-align: center;
@@ -10,7 +11,7 @@ h1 {
   font-family: 'lato';
   text-transform: uppercase;
   letter-spacing: 8px;
-  font-size: 32px;
+  font-size: 24px;
   display: inline;
 }
 
@@ -22,34 +23,11 @@ h2 {
   font-family: 'lato';
   font-weight: 800;
   color: $dark;
-  letter-spacing: 4px;
-  font-size: 20px;
-}
-
-a {
-  text-decoration: none;
-  color: $link-blue;
-}
-
-.add-climb {
-  font-size: 48px;
-  display: inline-block;
-  float: left;
-  line-height: 0.8;
-}
-
-.filter {
-  float: right;
-  font-weight: 300;
-  border: 2px solid $mint;
-  padding: 2px 6px 2px 12px;
   letter-spacing: 2px;
-  text-transform: lowercase;
-  line-height: 1;
-  cursor: pointer;
   font-size: 16px;
-  margin-top: 8px;
+  margin-bottom: 12px;
 }
+
 
 form {
   input, textarea {
@@ -70,5 +48,6 @@ form {
     color: $dark;
     letter-spacing: 2px;
     font-weight: 700;
+    font-size: 14px;
   }
 }

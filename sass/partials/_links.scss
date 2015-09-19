@@ -1,0 +1,47 @@
+a {
+  font-family: 'news cycle';
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  line-height: 24px;
+  color: $dark;
+  cursor: pointer;
+}
+
+.add-climb {
+  position: absolute;
+  left: 24px;
+  span {
+    display: block;
+    float: right;
+    margin-top: 1px;
+    margin-left: 2px;
+  }
+}
+
+.filter {
+  position: absolute;
+  right: 24px;
+}
+
+form .row.image a {
+  float: right;
+  border-bottom: 2px solid;
+  font-weight: bold;
+}
+
+.button {
+  border: none;
+  border-radius: 4px;
+  background: none;
+  color: #c7cbd8;
+  cursor: pointer;
+  width: 100%;
+  background-color: #323748;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
