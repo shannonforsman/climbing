@@ -11,6 +11,11 @@ body, html {
   height: 100vh;
 }
 
+.leaflet-bottom.leaflet-right {
+  z-index: 1;
+}
+
+
 .content {
   background: rgba($mint, .75);
   position: fixed;

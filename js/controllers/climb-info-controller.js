@@ -43,8 +43,18 @@ app.controller('ClimbInfoController', ['$scope', 'ClimbMarkers', '$routeParams',
   }
   $scope.showInfo = function() {
     var modal = document.getElementById('modal')
+    var leftArrow = document.getElementsByClassName('nextImg')[0]
+    var rightArrow = document.getElementsByClassName('nextImg')[1]
+    var more = document.getElementById('more')
+
     modal.style.height = '100vh'
     modal.style.paddingTop = '75px'
     modal.style.overflow = 'scroll'
+
+    leftArrow.style.display = 'block'
+    rightArrow.style.display = 'block'
+
+    more.style.display = 'none  '
+
   }
 }])

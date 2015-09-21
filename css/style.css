@@ -178,6 +178,9 @@ body, html {
 .leaflet-container {
   height: 100vh; }
 
+.leaflet-bottom.leaflet-right {
+  z-index: 1; }
+
 .content {
   background: rgba(115, 218, 185, 0.75);
   position: fixed;
@@ -209,17 +212,17 @@ header {
   background: #2D3140;
   background: #2D3140;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #2D3140 0%, #333849 100%);
+  background: -moz-linear-gradient(top, #2D3140 0%, #222631 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left left, left right, color-stop(0%, #2D3140), color-stop(100%, #333849));
+  background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, #2D3140), color-stop(100%, #222631));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #2D3140 0%, #333849 100%);
+  background: -webkit-linear-gradient(top, #2D3140 0%, #222631 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #2D3140 0%, #333849 100%);
+  background: -o-linear-gradient(top, #2D3140 0%, #222631 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #2D3140 0%, #333849 100%);
+  background: -ms-linear-gradient(top, #2D3140 0%, #222631 100%);
   /* IE10+ */
-  background: linear-gradient(to right, #2D3140 0%, #333849 100%);
+  background: linear-gradient(to bottom, #2D3140 0%, #222631 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
   /* IE6-9 */
@@ -301,24 +304,54 @@ header {
     text-align: center;
     color: #fff;
     width: 100%;
-    padding: 12px;
-    background-color: rgba(0, 0, 0, 0.5);
-    font-weight: 500; }
+    font-size: 20px;
+    padding: 12px 12px 24px;
+    background: rgba(0, 0, 0, 0.6);
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(45, 49, 64, 0) 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(45, 49, 64, 0)));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(45, 49, 64, 0) 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(45, 49, 64, 0) 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(45, 49, 64, 0) 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(45, 49, 64, 0) 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+    /* IE6-9 */
+    font-weight: 300; }
   #modal #more {
     position: absolute;
     color: red;
-    top: 170px;
-    left: 133px;
+    top: 164px;
+    width: 50px;
+    height: 40px;
     font-weight: bold;
-    background-color: white; }
+    background-image: url("/images/down-arrow.png");
+    background-size: 40px;
+    background-repeat: no-repeat;
+    margin-left: 50%;
+    left: -20px;
+    cursor: pointer; }
+    #modal #more:hover {
+      opacity: .6;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
   #modal .info {
     background: #fff;
     padding: 12px 0 0; }
     #modal .info h2 {
       position: relative;
-      color: #73DAB9;
+      color: #4bcfa5;
       background: none;
-      font-size: 20px; }
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 0; }
       #modal .info h2 span {
         text-transform: uppercase;
         font-size: 12px; }
@@ -327,6 +360,13 @@ header {
     #modal .more h4 {
       display: inline;
       padding-right: 4px; }
+    #modal .more .button {
+      margin-top: 24px; }
+    #modal .more p:first-child::first-line {
+      font-variant: small-caps;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px; }
   #modal .active-image {
     width: 100%;
     height: 200px;
@@ -339,7 +379,7 @@ header {
   overflow-y: scroll;
   height: 108px; }
   .weather .weather-hour {
-    background: #f6f6f6;
+    background: #eee;
     border-bottom: 4px solid #fff;
     padding: 12px 24px; }
     .weather .weather-hour:after {

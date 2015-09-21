@@ -2,7 +2,7 @@
   <h2>{{climbData.properties.name}}</h2>
   <image-carousel ng-show="climbData.images" images="climbData.images"></image-carousel>
   <div class="info">
-    <div id="more" ng-click="showInfo()">More!</div>
+    <div id="more" ng-click="showInfo()"></div>
     <h2>{{climbData.properties.name}}<br><span>- {{climbData.properties.genLocation}} -</span></h2>
     <div class="weather">
       <div class="weather-hour" ng-repeat="weather in weatherData | limitTo:5">
