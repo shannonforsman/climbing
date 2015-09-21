@@ -42,7 +42,25 @@ app.factory('ClimbMarkers', ['$http', '$q', '$route', '$location', function ($ht
 app.factory('MarkerObj', ['ClimbMarkers', function (ClimbMarkers) {
   var markers = {}
   return markers
+  // return {
+  //   arr : ClimbMarkers.get()
+  // }
+
+  // if (markers.arr === undefined) {
+  //   ClimbMarkers.get().then(function(results) {
+  //     return {
+  //       arr: results
+  //     }
+  //   })
+  // } else {
+  //   return markers
+  // }
 }])
+
+// return {
+//     topics: _topics,
+//     getTopics: _getTopics
+// };
 
 app.factory('WeatherAPI', ['$http', '$q', function ($http, $q) {
   var weather = {}

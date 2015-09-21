@@ -123,7 +123,7 @@ a {
 
 .add-climb {
   position: absolute;
-  left: 24px; }
+  left: 32px; }
   .add-climb span {
     display: block;
     float: right;
@@ -132,7 +132,7 @@ a {
 
 .filter {
   position: absolute;
-  right: 24px; }
+  right: 32px; }
 
 form .row.image a {
   float: right;
@@ -149,7 +149,8 @@ form .row.image a {
   background-color: #323748;
   text-transform: uppercase;
   font-size: 12px;
-  letter-spacing: 4px; }
+  letter-spacing: 4px;
+  padding: 6px 0; }
 
 body, html {
   height: 100%; }
@@ -254,6 +255,60 @@ header {
       letter-spacing: 4px;
       text-transform: uppercase;
       font-size: 12px; }
+  header .filter-options label {
+    color: #c7cbd8;
+    float: left;
+    font-weight: 300; }
+  header .filter-options .button {
+    background: #575f7c;
+    outline: none; }
+
+#modal {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  bottom: 0;
+  z-index: 10;
+  box-shadow: -2px -2px 24px rgba(0, 0, 0, 0.33);
+  overflow: hidden; }
+  #modal h2 {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-weight: 500; }
+  #modal #more {
+    position: absolute;
+    color: red;
+    top: 170px;
+    left: 133px;
+    font-weight: bold;
+    background-color: white; }
+  #modal .info {
+    background: #fff;
+    padding: 12px 24px 24px; }
+    #modal .info h2 {
+      position: relative;
+      color: #73DAB9;
+      background: none;
+      border-bottom: 1px solid;
+      font-size: 20px; }
+      #modal .info h2 span {
+        text-transform: uppercase;
+        font-size: 12px; }
+  #modal .active-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover; }
+  #modal .nextImg {
+    display: none; }
+
+.weather {
+  float: left;
+  position: relative; }
 
 form {
   width: 100%; }

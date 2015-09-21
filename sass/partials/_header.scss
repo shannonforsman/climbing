@@ -49,5 +49,16 @@ header {
       }
     }
   }
+  .filter-options {
+    label {
+      color: lighten( $dark, 60% );
+      float: left;
+      font-weight: 300;
+    }
+    .button {
+      background: lighten( $dark, 20% );
+      outline: none;
+    }
+  }
 
 }

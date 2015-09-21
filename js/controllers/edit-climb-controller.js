@@ -1,11 +1,24 @@
 app.controller('EditClimbController', ['$scope', '$routeParams', 'ClimbMarkers', 'MarkerObj', function ($scope, $routeParams, ClimbMarkers, MarkerObj) {
 
-MarkerObj.arr.forEach(function(el, index) {
-  if (parseInt(el.id) === parseInt($routeParams.id)) {
-    $scope.currentClimb = el
-    $scope.indexOfClimb = index
-   }
-})
+if (MarkerObj.arr === undefined) {
+  ClimbMarkers.get()
+  .then(function (markers) {
+    MarkerObj.arr = markers
+    MarkerObj.arr.forEach(function(el, index) {
+      if (parseInt(el.id) === parseInt($routeParams.id)) {
+        $scope.currentClimb = el
+        $scope.indexOfClimb = index
+       }
+    })
+  })
+} else {
+  MarkerObj.arr.forEach(function(el, index) {
+    if (parseInt(el.id) === parseInt($routeParams.id)) {
+      $scope.currentClimb = el
+      $scope.indexOfClimb = index
+     }
+  })
+}
 
 $scope.imgArr = [{id: 'img1'}]
 

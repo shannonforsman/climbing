@@ -13,7 +13,7 @@ a {
 
 .add-climb {
   position: absolute;
-  left: 24px;
+  left: 32px;
   span {
     display: block;
     float: right;
@@ -24,7 +24,7 @@ a {
 
 .filter {
   position: absolute;
-  right: 24px;
+  right: 32px;
 }
 
 form .row.image a {
@@ -44,4 +44,5 @@ form .row.image a {
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 4px;
+  padding: 6px 0;
 }

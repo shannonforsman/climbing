@@ -6,16 +6,10 @@ app.controller('MarkerController', ['Path', '$scope', '$filter', '$location', 'C
     window.location="/#/climbs/"
   }
 
+  $scope.path = function() {
+    return Path.location === "/climbs"
+  }
 
-    $scope.path = function() {
-      return Path.location === "/climbs/new"
-    }
-
-
-    //  $scope.path = window.location.hash
-  // $scope.location = function() {
-  //   $location.path() === '/climbs/new'
-  // }
   ClimbMarkers.get()
   .then(function (markers) {
     MarkerObj.arr = markers

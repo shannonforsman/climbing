@@ -1,0 +1,61 @@
+#modal {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  bottom: 0;
+  z-index: 10;
+  box-shadow: -2px -2px 24px rgba(0, 0, 0, 0.33);
+  overflow: hidden;
+
+  h2 {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    color: $white;
+    width: 100%;
+    padding: 12px;
+    background-color: rgba($black, 0.5);
+    font-weight: 500;
+  }
+
+  #more {
+    position: absolute;
+    color: red;
+    top: 170px;
+    left: 133px;
+    font-weight: bold;
+    background-color: white;
+  }
+
+  .info {
+    background: $white;
+    padding: 12px 24px 24px;
+    h2 {
+      position: relative;
+      color: $mint;
+      background: none;
+      border-bottom: 1px solid;
+      font-size: 20px;
+      span {
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .active-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+  }
+  .nextImg {
+    display: none;
+  }
+
+}
+.weather {
+  float: left;
+  position: relative;
+
+
+}
