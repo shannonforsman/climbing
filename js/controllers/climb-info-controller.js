@@ -20,10 +20,10 @@ app.controller('ClimbInfoController', ['$scope', 'ClimbMarkers', '$routeParams',
           var long = $scope.climbData.geometry.coordinates[0]
           var lat = $scope.climbData.geometry.coordinates[1]
           $scope.indexOfClimb = index
-          //
-          // WeatherAPI.get(lat, long).then(function(weather) {
-          //   $scope.weatherData = weather.hourly_forecast
-          // })
+
+          WeatherAPI.get(lat, long).then(function(weather) {
+            $scope.weatherData = weather.hourly_forecast
+          })
          }
       })
     })
@@ -35,9 +35,9 @@ app.controller('ClimbInfoController', ['$scope', 'ClimbMarkers', '$routeParams',
         var long = $scope.climbData.geometry.coordinates[0]
         var lat = $scope.climbData.geometry.coordinates[1]
         $scope.indexOfClimb = index
-        // WeatherAPI.get(lat, long).then(function(weather) {
-        //   $scope.weatherData = weather.hourly_forecast
-        // })
+        WeatherAPI.get(lat, long).then(function(weather) {
+          $scope.weatherData = weather.hourly_forecast
+        })
        }
     })
   }

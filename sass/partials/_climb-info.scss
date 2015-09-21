@@ -29,17 +29,23 @@
 
   .info {
     background: $white;
-    padding: 12px 24px 24px;
+    padding: 12px 0 0;
     h2 {
       position: relative;
       color: $mint;
       background: none;
-      border-bottom: 1px solid;
       font-size: 20px;
       span {
         text-transform: uppercase;
         font-size: 12px;
       }
+    }
+  }
+  .more {
+    padding: 24px;
+    h4 {
+      display: inline;
+      padding-right: 4px;
     }
   }
 
@@ -51,11 +57,26 @@
   .nextImg {
     display: none;
   }
-
 }
 .weather {
-  float: left;
-  position: relative;
+  width: 100%;
+  overflow-y: scroll;
+  height: 108px;
+  .weather-hour {
+    background: #f6f6f6;
+    border-bottom: 4px solid $white;
+    padding: 12px 24px;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+}
 
-
+.third {
+  img {
+    float: right;
+    margin-top: -4px;
+  }
 }

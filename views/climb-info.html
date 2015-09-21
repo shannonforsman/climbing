@@ -2,19 +2,29 @@
   <h2>{{climbData.properties.name}}</h2>
   <image-carousel ng-show="climbData.images" images="climbData.images"></image-carousel>
   <div class="info">
-    <h2>{{climbData.properties.name}}<br><span>- {{climbData.properties.genLocation}} -</span></h2>
-
     <div id="more" ng-click="showInfo()">More!</div>
-    <div class="weather" ng-repeat="weather in weatherData | limitTo:5">
-      <p>time: {{weather.FCTTIME.hour > 0 && weather.FCTTIME.hour < 13 ? weather.FCTTIME.hour + ":00 AM" : (weather.FCTTIME.hour == 0) ? 12 + ":00 AM" : weather.FCTTIME.hour-12 + ":00 PM"}}</p>
-      <p>{{weather.temp.english + "°F"}}</p>
-      <p>humidity: {{weather.humidity + "%"}}</p>
-      <p>{{weather.condition}}</p>
-      <img ng-src="{{weather.icon_url}}" alt="">
+    <h2>{{climbData.properties.name}}<br><span>- {{climbData.properties.genLocation}} -</span></h2>
+    <div class="weather">
+      <div class="weather-hour" ng-repeat="weather in weatherData | limitTo:5">
+        <h4>Weather at {{weather.FCTTIME.hour > 0 && weather.FCTTIME.hour < 13 ? weather.FCTTIME.hour + ":00 AM" : (weather.FCTTIME.hour == 0) ? 12 + ":00 AM" : weather.FCTTIME.hour-12 + ":00 PM"}}</h4>
+        <div class="two-thirds">
+          <p>{{weather.temp.english + "°F"}} and {{weather.condition.toLowerCase()}} <br>
+             {{weather.humidity + "%"}} humidity</p>
+          </p>
+        </div>
+        <div class="third">
+          <img ng-src="{{weather.icon_url}}" alt="">
+        </div>
+      </div>
     </div>
-    <b>Hike Length:</b> {{climbData.properties.hikeLength}}<br>
-    <b>Area Name:</b> {{climbData.properties.name}}<br><br><br>
-    <b>Best For:</b> {{climbData.properties.level}}<br><br><br>
-    <a href="/#/climbs/{{climbData.id}}/edit">edit</a>
+    <div class="more">
+      <p>{{climbData.properties.description}}</p>
+      <p><h4>Type:</h4> {{climbData.properties.type}}</p>
+      <p><h4>Hike Length:</h4> {{climbData.properties.hikeLength}}<p>
+      <p><h4>Climbing Level:</h4> {{climbData.properties.level}}<p>
+      <p><h4>Area Size:</h4> {{climbData.properties.size}}<p>
+      <p><h4>Shade:</h4> {{climbData.properties.shade}} shade<p>
+      <p><a href="/#/climbs/{{climbData.id}}/edit" class="button">edit</a></p>
+    </div>
   </div>
   </div>

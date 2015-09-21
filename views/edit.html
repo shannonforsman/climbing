@@ -1,16 +1,6 @@
-<style>
-  .edit {
-    position: absolute;
-    width: 800px;
-    height: 500px;
-    background-color: #fff;
-    top: 250px;
-    left: 0;
-    z-index: 200;
-  }
-</style>
 
-<div class="edit">
+
+<div class="content">
   <form ng-submit="updateArea(currentClimb)" name="submit-form">
       <div class="row">
         <label for="areaName">Area Name</label>
@@ -81,7 +71,6 @@
       </div>
       <div class="row">
         <label for="popular">Popular Area</label>
-        {{currentClimb.properties}}
         <input type="checkbox" id="popular" ng-model="currentClimb.properties.popular" ng-checked="currentClimb.properties.popular">
       </div>
       <div class="row">
@@ -96,7 +85,7 @@
         </div>
         <a ng-click="addImage()">Add another image</a>
       </div>
-      <input type="submit" id="submit" value='Submit Post'>
+      <input type="submit" class="button" value='Submit Post'>
   </form>
   <button ng-click="deleteMarker(currentClimb.id)">delete</button>
 </div>

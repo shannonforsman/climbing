@@ -74,6 +74,20 @@ h2 {
   font-size: 16px;
   margin-bottom: 12px; }
 
+h4 {
+  font-family: 'lato';
+  margin-bottom: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #2D3140; }
+
+p {
+  font-size: 15px;
+  color: #2D3140;
+  margin-bottom: 12px; }
+
 form input, form textarea {
   font-family: 'news cycle';
   font-size: 14px;
@@ -140,6 +154,8 @@ form .row.image a {
   font-weight: bold; }
 
 .button {
+  display: block;
+  text-align: center;
   border: none;
   border-radius: 4px;
   background: none;
@@ -176,6 +192,14 @@ body, html {
   float: left;
   clear: none;
   margin-right: 0; }
+
+.third {
+  width: 33%;
+  float: right; }
+
+.two-thirds {
+  width: 66%;
+  float: left; }
 
 header {
   display: block;
@@ -289,16 +313,20 @@ header {
     background-color: white; }
   #modal .info {
     background: #fff;
-    padding: 12px 24px 24px; }
+    padding: 12px 0 0; }
     #modal .info h2 {
       position: relative;
       color: #73DAB9;
       background: none;
-      border-bottom: 1px solid;
       font-size: 20px; }
       #modal .info h2 span {
         text-transform: uppercase;
         font-size: 12px; }
+  #modal .more {
+    padding: 24px; }
+    #modal .more h4 {
+      display: inline;
+      padding-right: 4px; }
   #modal .active-image {
     width: 100%;
     height: 200px;
@@ -307,8 +335,21 @@ header {
     display: none; }
 
 .weather {
-  float: left;
-  position: relative; }
+  width: 100%;
+  overflow-y: scroll;
+  height: 108px; }
+  .weather .weather-hour {
+    background: #f6f6f6;
+    border-bottom: 4px solid #fff;
+    padding: 12px 24px; }
+    .weather .weather-hour:after {
+      content: "";
+      display: table;
+      clear: both; }
+
+.third img {
+  float: right;
+  margin-top: -4px; }
 
 form {
   width: 100%; }
@@ -342,3 +383,6 @@ form {
       float: left; }
   form .image input {
     margin-bottom: 12px; }
+
+.content img {
+  width: 100%; }

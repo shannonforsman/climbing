@@ -28,6 +28,22 @@ h2 {
   margin-bottom: 12px;
 }
 
+h4 {
+  font-family: 'lato';
+  margin-bottom: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: $dark;
+}
+
+p {
+  font-size: 15px;
+  color: $dark;
+  margin-bottom: 12px;
+}
+
 
 form {
   input, textarea {
