@@ -1,6 +1,7 @@
 app.controller('NewClimbController', ['$location', '$scope', '$http', 'ClimbMarkers', 'MarkerObj', 'Path',  function ($location, $scope, $http, ClimbMarkers, MarkerObj, Path) {
 
   Path.location = $location.path()
+  document.body.id = "new-climb"
 
   $scope.imgArr = [{id: 'img1'}]
 
@@ -37,11 +38,18 @@ app.controller('NewClimbController', ['$location', '$scope', '$http', 'ClimbMark
     obj['geometry'] = geom
     obj['id'] = Date.now().toString()
 
-    console.log(obj)
-
-    MarkerObj.arr.push(obj)
-    ClimbMarkers.post(obj)
-
+    if (MarkerObj.arr === undefined) {
+      ClimbMarkers.get()
+      .then(function (markers) {
+        MarkerObj.arr = markers
+        MarkerObj.arr.push(obj)
+        ClimbMarkers.post(obj)
+      })
+    } else {
+      MarkerObj.arr.push(obj)
+      ClimbMarkers.post(obj)
+    }
+    console.log(MarkerObj)
     window.location="/#/climbs/"
   }
 

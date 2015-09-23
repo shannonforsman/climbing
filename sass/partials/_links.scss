@@ -27,10 +27,13 @@ a {
   right: 32px;
 }
 
-form .row.image a {
+form  a {
   float: right;
   border-bottom: 2px solid;
   font-weight: bold;
+  a.left {
+    float: left;
+  }
 }
 
 .button {
@@ -47,4 +50,10 @@ form .row.image a {
   font-size: 12px;
   letter-spacing: 4px;
   padding: 6px 0;
+  font-family: 'news cycle';
+}
+
+.content .delete {
+  float: right;
+  border-bottom: 2px solid $dark;
 }

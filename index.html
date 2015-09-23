@@ -10,8 +10,9 @@
 <header>
   <div class="inner">
     <a class="filter menu" ng-click="showFilters()">filter</a>
-    <a class="add-climb menu" href="#/climbs/new">area <span>+</span></a>
-    <a href="#/climbs"><h1>Cluster</h1></a>
+    <a class="add-climb menu" href="#/climbs/new" ng-click="closeFilters()"><span class="add-link">area </span><span class="plus">+</span></a>
+    <a href="#/climbs" ng-click="closeFilters()"><h1>Cluster</h1></a>
+    <h3 class="subtitle">find your favorite climbing area</h3>
   </div>
   <div class="search" ng-show="path()">
     <form>
@@ -21,6 +22,16 @@
   <div class="hide">
     <div class="inner">
     <form class="filter-options">
+      <div class="row">
+        <label class="half">
+          bouldering
+          <input type="checkbox" ng-model="search.properties.type" ng-true-value="'bouldering'" ng-false-value="'no'">
+        </label>
+        <label class="half">
+          sport
+          <input type="checkbox" ng-model="search.properties.type" ng-true-value="'sport'" ng-false-value="'no'">
+        </label>
+      </div>
       <div class="row">
         <label for="hike">Hike Length</label>
         <select id="hike" ng-model="search.properties.hikeLength" ng-init="search.properties.hikeLength=''">
@@ -34,7 +45,7 @@
         <label for="size">Area Size</label>
         <select id="size" ng-model="search.properties.size" ng-init="search.properties.size=''">
           <option value="">all</option>
-          <option value="small">medium</option>
+          <option value="small">small</option>
           <option value="medium">medium</option>
           <option value="large">large</option>
         </select>
@@ -57,22 +68,12 @@
         </select>
       </div>
       <div class="row">
-        <label for="popular">Most Popular</label>
-        <input type="checkbox" ng-model="search.properties.popular" ng-true-value="true" ng-false-value="false">
-      </div>
-      <div class="row">
-        <label>
-          bouldering
-          <input type="checkbox" ng-model="search.properties.type" ng-true-value="'bouldering'" ng-false-value="'no'">
-        </label>
-        <label>
-          sport
-          <input type="checkbox" ng-model="search.properties.type" ng-true-value="'sport'" ng-false-value="'no'">
+        <label>Most Popular
+          <input type="checkbox" ng-model="search.properties.popular" ng-true-value="true" ng-false-value="false">
         </label>
       </div>
       <button ng-click=reset() class="button">Reset</button>
     </form>
-
     </div>
   </div>
 </header>

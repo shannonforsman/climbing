@@ -1,9 +1,21 @@
 app.controller('MarkerController', ['Path', '$scope', '$filter', '$location', 'ClimbMarkers', 'MarkerObj', function (Path, $scope, $filter, $location, ClimbMarkers, MarkerObj) {
 
+  document.body.id = "home"
+
   $scope.showFilters = function() {
     var hide = document.querySelector('.hide')
     hide.classList.toggle('show')
     window.location="/#/climbs/"
+  }
+
+  $scope.closeFilters = function() {
+    if (document.body.id !== "home") {
+      document.body.id = "home"
+    }
+    if (document.querySelector('.show')) {
+      var show = document.querySelector('.show')
+      show.classList.remove('show')
+    }
   }
 
   $scope.path = function() {

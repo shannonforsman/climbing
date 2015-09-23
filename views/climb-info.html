@@ -5,20 +5,24 @@
     <div id="more" ng-click="showInfo()"></div>
     <h2>{{climbData.properties.name}}<br><span>- {{climbData.properties.genLocation}} -</span></h2>
     <div class="weather">
-      <div class="weather-hour" ng-repeat="weather in weatherData | limitTo:5">
-        <h4>Weather at {{weather.FCTTIME.hour > 0 && weather.FCTTIME.hour < 13 ? weather.FCTTIME.hour + ":00 AM" : (weather.FCTTIME.hour == 0) ? 12 + ":00 AM" : weather.FCTTIME.hour-12 + ":00 PM"}}</h4>
-        <div class="two-thirds">
-          <p>{{weather.temp.english + "°F"}} and {{weather.condition.toLowerCase()}} <br>
-             {{weather.humidity + "%"}} humidity</p>
-          </p>
-        </div>
-        <div class="third">
-          <img ng-src="{{weather.icon_url}}" alt="">
+      <div class="weather-inner">
+        <div class="weather-hour" ng-repeat="weather in weatherData | limitTo:5">
+          <h4>Weather at {{weather.FCTTIME.hour > 0 && weather.FCTTIME.hour < 13 ? weather.FCTTIME.hour + ":00 AM" : (weather.FCTTIME.hour == 0) ? 12 + ":00 AM" : weather.FCTTIME.hour-12 + ":00 PM"}}</h4>
+          <div class="two-thirds">
+            <p>{{weather.temp.english + "°F"}} and {{weather.condition.toLowerCase()}} <br>
+               {{weather.humidity + "%"}} humidity</p>
+            </p>
+          </div>
+          <div class="third">
+            <img ng-src="{{weather.icon_url}}" alt="">
+          </div>
         </div>
       </div>
     </div>
     <div class="more">
-      <p>{{climbData.properties.description}}</p>
+      <div class="desc">
+        <p class="first"><h4>Description:</h4> {{climbData.properties.description}}</p>
+      </div>
       <p><h4>Type:</h4> {{climbData.properties.type}}</p>
       <p><h4>Hike Length:</h4> {{climbData.properties.hikeLength}}<p>
       <p><h4>Climbing Level:</h4> {{climbData.properties.level}}<p>

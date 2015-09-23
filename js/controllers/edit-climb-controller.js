@@ -1,4 +1,11 @@
-app.controller('EditClimbController', ['$scope', '$routeParams', 'ClimbMarkers', 'MarkerObj', function ($scope, $routeParams, ClimbMarkers, MarkerObj) {
+app.controller('EditClimbController', ['$scope', '$routeParams', '$location', 'ClimbMarkers', 'MarkerObj', 'Path', function ($scope, $routeParams, $location, ClimbMarkers, MarkerObj, Path) {
+
+Path.location = $location.path()
+
+
+document.body.id = "edit"
+
+
 
 if (MarkerObj.arr === undefined) {
   ClimbMarkers.get()
@@ -45,7 +52,6 @@ $scope.deleteImage = function(id) {
   }
 }
 
-
 $scope.deleteMarker = function(id) {
   MarkerObj.arr.splice($scope.indexOfClimb, 1)
   ClimbMarkers.delete(id)
@@ -84,6 +90,5 @@ $scope.updateArea = function(climbObj) {
   ClimbMarkers.put(obj)
   window.location="/#/climbs/" + $routeParams.id
 }
-
 
 }])

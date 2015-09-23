@@ -14,8 +14,8 @@
     color: $white;
     width: 100%;
     font-size: 20px;
-    padding: 12px 12px 24px;
-    @include linearGradient(rgba($black, .6), rgba($dark, 0));
+    padding: 12px 12px 42px;
+    @include linearGradient(rgba($black, .7), rgba($dark, 0));
     font-weight: 300;
   }
 
@@ -34,7 +34,7 @@
     cursor: pointer;
     &:hover {
       opacity: .6;
-      @include transition(all 0.3s ease)
+      @include transition(all 0.3s ease);
     }
   }
 
@@ -48,6 +48,7 @@
       font-size: 20px;
       font-weight: 400;
       margin-bottom: 0;
+      padding-bottom: 24px;
       span {
         text-transform: uppercase;
         font-size: 12px;
@@ -63,6 +64,9 @@
     .button {
       margin-top: 24px;
     }
+    .description {
+      display: none;
+    }
     p:first-child::first-line {
       font-variant: small-caps;
       font-size: 15px;
@@ -75,6 +79,7 @@
     width: 100%;
     height: 200px;
     background-size: cover;
+    background-position: center;
   }
   .nextImg {
     display: none;
@@ -100,5 +105,28 @@
   img {
     float: right;
     margin-top: -4px;
+  }
+}
+
+.nextImg {
+  background-image: url('/images/down-arrow.png');
+  width: 50px;
+  height: 24px;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  margin-top: 90px;
+  background-position: top;
+  cursor: pointer;
+  &:hover {
+    opacity: .6;
+    @include transition(all 0.3s ease);
+  }
+  &:nth-child(1) {
+    @include rotate(90deg);
+    float: left;
+  }
+  &:nth-child(2) {
+    @include rotate(-90deg);
+    float: right;
   }
 }

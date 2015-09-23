@@ -11,7 +11,7 @@ app.directive('leafletDirective', function () {
       var map = L.map(attrs.id, {
         center: [40,-105.33],
         zoomControl: false ,
-        zoom: 13
+        zoom: 12
       })
       new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 
@@ -21,10 +21,50 @@ app.directive('leafletDirective', function () {
           accessToken: token
       }).addTo(map);
 
+      var areaIcon = L.icon({
+        iconUrl: '/images/marker.png',
+        iconSize:     [31.5, 35], // size of the icon
+        iconAnchor:   [15, 0], // point of the icon which will correspond to marker's location
+        popupAnchor:  [-3, -76]
+      });
+
       var geojsonLayer = L.geoJson(scope.data, {
-        onEachFeature: onEachFeature
+        onEachFeature: onEachFeature,
+        pointToLayer: function(feature, latlng) {
+          return L.marker(latlng, {
+              icon: areaIcon
+          })
+        }
       }).addTo(map)
 
+
+      // geojsonLayer.featureLayer(geojson, {
+      //   pointToLayer: function(feature, latlon) {
+      //       return L.marker(latlng, {icon: '/images/marker.png' });
+      //   }
+      // }).addTo(map);
+
+      // var points = L.geoJson(labels, {
+      //   pointToLayer: function (feature, latlng) {
+      //       return L.marker(latlng, {icon: crossIcon });
+      //   }
+      // });
+      //
+      // geojsonLayer.data.setStyle(function(feature) {
+      //   console.log('feature', feature)
+      //   //  return '/images/marker.png'
+      //  });
+      // var myIcon = L.icon({
+      //     iconUrl: '/images/marker.png',
+      //     iconRetinaUrl: 'my-icon@2x.png',
+      //     iconSize: [38, 95],
+      //     iconAnchor: [22, 94],
+      //     popupAnchor: [-3, -76],
+      //     shadowSize: [68, 95],
+      //     shadowAnchor: [22, 94]
+      // });
+      //
+      // L.marker([50.505, 30.57], {icon: myIcon}).addTo(map);
       scope.$watch('data', function (newVal, oldVal) {
         if (newVal !== oldVal) {
           geojsonLayer.clearLayers()

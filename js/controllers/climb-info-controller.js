@@ -1,8 +1,7 @@
 app.controller('ClimbInfoController', ['$scope', 'ClimbMarkers', '$routeParams', 'MarkerObj', 'WeatherAPI', 'Path', '$location', function ($scope, ClimbMarkers, $routeParams, MarkerObj, WeatherAPI, Path, $location) {
 
-  console.log('path', Path)
-
   Path.location = $location.path()
+  document.body.id = "show"
 
   $scope.climbData
   $scope.indexOfClimb
@@ -54,7 +53,6 @@ app.controller('ClimbInfoController', ['$scope', 'ClimbMarkers', '$routeParams',
     leftArrow.style.display = 'block'
     rightArrow.style.display = 'block'
 
-    more.style.display = 'none  '
-
+    more.style.display = 'none'
   }
 }])

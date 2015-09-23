@@ -1,2 +1,3 @@
 <div class="active-image" style="background-image: url({{images[index].url}})" alt="">
-<button class="nextImg" ng-click="prevImg()">prev</button> <button  class="nextImg" ng-click="nextImg()">next</button>
+<div class="nextImg" ng-click="prevImg()" ng-show="images.length > 1"></div>
+<div class="nextImg" ng-click="nextImg()" ng-show="images.length > 1"></div>

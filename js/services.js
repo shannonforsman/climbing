@@ -1,10 +1,10 @@
 app.factory('ClimbMarkers', ['$http', '$q', '$route', '$location', function ($http, $q, $route, $location) {
   var link = 'https://limitless-citadel-5215.herokuapp.com/climbing-markers'
+  // var link = 'http://localhost:3000/climbing-markers'
   var climbs = {}
 
   climbs.get = function () {
-    console.log($location)
-    console.log('route', $route.routes['/climbs'])
+
 
     var deferred = $q.defer()
     $http.get(link).success(function (data) {

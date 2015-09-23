@@ -1,3 +1,118 @@
 @media (min-width: 600px) {
+  #show, #new-climb, #edit {
+    header {
+      width: 400px;
+      height: auto;
+      .hide {
+        display: none;
+      }
+    }
+  }
 
+  #new-climb, #edit {
+    .content {
+      width: 400px;
+    }
+  }
+
+  .content {
+    padding: 112px 32px 32px;
+  }
+
+  header {
+    .inner {
+      text-align: left;
+    }
+    .search {
+      padding: 0 24px;
+    }
+    .add-climb {
+      position: absolute;
+      right: 24px;
+      font-size: 42px;
+      left: auto;
+      top: 20px;
+      display: inline;
+      span.add-link {
+        display: none;
+      }
+    }
+    h3 {
+      color: $white;
+      font-family: 'news cycle';
+      letter-spacing: 2px;
+      font-size: 14px;
+    }
+    width: 350px;
+    height: 100vh;
+    .subtitle {
+      display: block;
+    }
+    .filter {
+      display: none;
+    }
+    .hide {
+      display: block;
+    }
+  }
+  #modal {
+    padding-top: 72px;
+    height: 100vh;
+    width: 400px;
+    overflow: scroll;
+
+    .active-image {
+      height: 300px;
+    }
+    #more {
+      display: none;
+    }
+    .nextImg {
+      margin-top: 145px;
+      display: block;
+    }
+
+    .weather {
+      height: 120px;
+      .weather-inner {
+        width: 250%;
+      }
+      .weather-hour {
+        width: 20%;
+        float: left;
+        height: 120px;
+        padding: 12px 20px;
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .more .description {
+      display: inline;
+    }
+    p:first-child::first-line {
+      font-variant: none;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+  }
+}
+@media (min-width: 850px) {
+  #show {
+    header {
+      width: 600px;
+    }
+  }
+  header {
+    width: 350px;
+  }
+  #modal {
+    width: 600px;
+    .weather {
+      .weather-inner {
+        width: 165%;
+      }
+    }
+  }
 }

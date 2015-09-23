@@ -148,10 +148,12 @@ a {
   position: absolute;
   right: 32px; }
 
-form .row.image a {
+form a {
   float: right;
   border-bottom: 2px solid;
   font-weight: bold; }
+  form a a.left {
+    float: left; }
 
 .button {
   display: block;
@@ -166,7 +168,12 @@ form .row.image a {
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 4px;
-  padding: 6px 0; }
+  padding: 6px 0;
+  font-family: 'news cycle'; }
+
+.content .delete {
+  float: right;
+  border-bottom: 2px solid #2D3140; }
 
 body, html {
   height: 100%; }
@@ -210,6 +217,7 @@ header {
   z-index: 20;
   width: 100%;
   background: #2D3140;
+  top: 0;
   background: #2D3140;
   /* Old browsers */
   background: -moz-linear-gradient(top, #2D3140 0%, #222631 100%);
@@ -225,10 +233,11 @@ header {
   background: linear-gradient(to bottom, #2D3140 0%, #222631 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
-  /* IE6-9 */
-  top: 0; }
+  /* IE6-9 */ }
   header h1 {
     color: #fff; }
+  header .subtitle {
+    display: none; }
   header a {
     color: #fff; }
   header .fa {
@@ -283,12 +292,15 @@ header {
       text-transform: uppercase;
       font-size: 12px; }
   header .filter-options label {
-    color: #c7cbd8;
+    color: #8b93ae;
     float: left;
     font-weight: 300; }
   header .filter-options .button {
-    background: #575f7c;
-    outline: none; }
+    background: transparent;
+    outline: none;
+    border-bottom: 2px solid;
+    border-radius: 0;
+    width: auto; }
 
 #modal {
   position: absolute;
@@ -305,20 +317,20 @@ header {
     color: #fff;
     width: 100%;
     font-size: 20px;
-    padding: 12px 12px 24px;
-    background: rgba(0, 0, 0, 0.6);
+    padding: 12px 12px 42px;
+    background: rgba(0, 0, 0, 0.7);
     /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(45, 49, 64, 0) 100%);
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(45, 49, 64, 0) 100%);
     /* FF3.6+ */
-    background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(45, 49, 64, 0)));
+    background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, rgba(0, 0, 0, 0.7)), color-stop(100%, rgba(45, 49, 64, 0)));
     /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(45, 49, 64, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(45, 49, 64, 0) 100%);
     /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(45, 49, 64, 0) 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(45, 49, 64, 0) 100%);
     /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(45, 49, 64, 0) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(45, 49, 64, 0) 100%);
     /* IE10+ */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(45, 49, 64, 0) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(45, 49, 64, 0) 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
     /* IE6-9 */
@@ -351,7 +363,8 @@ header {
       background: none;
       font-size: 20px;
       font-weight: 400;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      padding-bottom: 24px; }
       #modal .info h2 span {
         text-transform: uppercase;
         font-size: 12px; }
@@ -362,6 +375,8 @@ header {
       padding-right: 4px; }
     #modal .more .button {
       margin-top: 24px; }
+    #modal .more .description {
+      display: none; }
     #modal .more p:first-child::first-line {
       font-variant: small-caps;
       font-size: 15px;
@@ -370,7 +385,8 @@ header {
   #modal .active-image {
     width: 100%;
     height: 200px;
-    background-size: cover; }
+    background-size: cover;
+    background-position: center; }
   #modal .nextImg {
     display: none; }
 
@@ -390,6 +406,34 @@ header {
 .third img {
   float: right;
   margin-top: -4px; }
+
+.nextImg {
+  background-image: url("/images/down-arrow.png");
+  width: 50px;
+  height: 24px;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  margin-top: 90px;
+  background-position: top;
+  cursor: pointer; }
+  .nextImg:hover {
+    opacity: .6;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+  .nextImg:nth-child(1) {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    float: left; }
+  .nextImg:nth-child(2) {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    float: right; }
 
 form {
   width: 100%; }
@@ -424,5 +468,102 @@ form {
   form .image input {
     margin-bottom: 12px; }
 
+header form .row select {
+  background-color: #c7cbd8; }
+
+header form .row label.half {
+  text-align: left; }
+
+form.edit input, form.edit textarea {
+  margin-top: 10px; }
+
+form.edit .images {
+  margin: 12px 0 24px; }
+  form.edit .images::after {
+    content: "";
+    display: table;
+    clear: both; }
+
+form.edit .left {
+  float: rigth; }
+
 .content img {
   width: 100%; }
+
+@media (min-width: 600px) {
+  #show header, #new-climb header, #edit header {
+    width: 400px;
+    height: auto; }
+    #show header .hide, #new-climb header .hide, #edit header .hide {
+      display: none; }
+  #new-climb .content, #edit .content {
+    width: 400px; }
+  .content {
+    padding: 112px 32px 32px; }
+  header {
+    width: 350px;
+    height: 100vh; }
+    header .inner {
+      text-align: left; }
+    header .search {
+      padding: 0 24px; }
+    header .add-climb {
+      position: absolute;
+      right: 24px;
+      font-size: 42px;
+      left: auto;
+      top: 20px;
+      display: inline; }
+      header .add-climb span.add-link {
+        display: none; }
+    header h3 {
+      color: #fff;
+      font-family: 'news cycle';
+      letter-spacing: 2px;
+      font-size: 14px; }
+    header .subtitle {
+      display: block; }
+    header .filter {
+      display: none; }
+    header .hide {
+      display: block; }
+  #modal {
+    padding-top: 72px;
+    height: 100vh;
+    width: 400px;
+    overflow: scroll; }
+    #modal .active-image {
+      height: 300px; }
+    #modal #more {
+      display: none; }
+    #modal .nextImg {
+      margin-top: 145px;
+      display: block; }
+    #modal .weather {
+      height: 120px; }
+      #modal .weather .weather-inner {
+        width: 250%; }
+      #modal .weather .weather-hour {
+        width: 20%;
+        float: left;
+        height: 120px;
+        padding: 12px 20px; }
+        #modal .weather .weather-hour p {
+          margin-bottom: 0; }
+    #modal .more .description {
+      display: inline; }
+    #modal p:first-child::first-line {
+      font-variant: none;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px; } }
+
+@media (min-width: 850px) {
+  #show header {
+    width: 600px; }
+  header {
+    width: 350px; }
+  #modal {
+    width: 600px; }
+    #modal .weather .weather-inner {
+      width: 165%; } }

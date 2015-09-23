@@ -42,6 +42,32 @@ form {
   }
 }
 
+header form {
+  .row select {
+    background-color: lighten($dark, 60);
+  }
+  .row label.half {
+    text-align: left;
+  }
+}
+
+form.edit {
+  input, textarea {
+    margin-top: 10px;
+  }
+  .images {
+    margin: 12px 0 24px;
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  .left {
+    float: rigth;
+  }
+}
+
 .content img {
   width: 100%;
 }
