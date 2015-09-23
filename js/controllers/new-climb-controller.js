@@ -51,6 +51,7 @@ app.controller('NewClimbController', ['$location', '$scope', '$http', 'ClimbMark
     }
     console.log(MarkerObj)
     window.location="/#/climbs/"
+    document.body.id = "home"
   }
 
 

@@ -6,7 +6,6 @@ Path.location = $location.path()
 document.body.id = "edit"
 
 
-
 if (MarkerObj.arr === undefined) {
   ClimbMarkers.get()
   .then(function (markers) {
