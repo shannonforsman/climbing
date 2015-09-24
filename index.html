@@ -9,8 +9,8 @@
 <body ng-controller='MarkerController'>
 <header>
   <div class="inner">
-    <a class="filter menu" ng-click="showFilters()">filter</a>
-    <a class="add-climb menu" href="#/climbs/new" ng-click="closeFilters()"><span class="add-link">area </span><span class="plus">+</span></a>
+    <a class="filter menu" ng-click="showFilters()"><img src="/images/filter.png" alt=""></a>
+    <a class="add-climb menu" href="#/climbs/new" ng-click="closeFilters()"><img src="/images/plus.png" alt=""></a>
     <a href="#/climbs" ng-click="closeFilters()"><h1>Cluster</h1></a>
     <h3 class="subtitle">find your favorite climbing area</h3>
   </div>
@@ -63,8 +63,8 @@
         <select ng-model="search.properties.level" ng-init="search.properties.level = ''">
           <option value="">all</option>
           <option value="Beginner">beginner</option>
-          <option value="intermediate">Intermediate</option>
-          <option value="expert">Expert</option>
+          <option value="intermediate">intermediate</option>
+          <option value="expert">expert</option>
         </select>
       </div>
       <div class="row">

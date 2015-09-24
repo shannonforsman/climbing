@@ -30,6 +30,12 @@ header {
     display: none;
     &.show {
       display: block;
+      height: 90vh;
+      overflow: scroll;
+      padding-bottom: 70px;
+      .inner {
+        padding-bottom: 42px;
+      }
     }
   }
 

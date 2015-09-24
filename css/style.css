@@ -135,18 +135,24 @@ a {
   color: #2D3140;
   cursor: pointer; }
 
-.add-climb {
+.add-climb, .filter {
   position: absolute;
-  left: 32px; }
-  .add-climb span {
-    display: block;
-    float: right;
-    margin-top: 1px;
-    margin-left: 2px; }
+  width: 20px;
+  top: 26px; }
+  .add-climb img, .filter img {
+    width: 100%; }
+  .add-climb:hover, .filter:hover {
+    opacity: .8;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+
+.add-climb {
+  right: 32px; }
 
 .filter {
-  position: absolute;
-  right: 32px; }
+  left: 32px; }
 
 form a {
   float: right;
@@ -249,7 +255,12 @@ header {
   header .hide {
     display: none; }
     header .hide.show {
-      display: block; }
+      display: block;
+      height: 90vh;
+      overflow: scroll;
+      padding-bottom: 70px; }
+      header .hide.show .inner {
+        padding-bottom: 42px; }
   header .search input {
     width: 100%;
     border: 0;
@@ -359,7 +370,7 @@ header {
     padding: 12px 0 0; }
     #modal .info h2 {
       position: relative;
-      color: #4bcfa5;
+      color: #30b78c;
       background: none;
       font-size: 20px;
       font-weight: 400;
@@ -469,7 +480,9 @@ form {
     margin-bottom: 12px; }
 
 header form .row select {
-  background-color: #c7cbd8; }
+  background-color: #c7cbd8;
+  /*     outline: none;
+ */ }
 
 header form .row label.half {
   text-align: left; }
@@ -512,7 +525,7 @@ form.edit .left {
       right: 24px;
       font-size: 42px;
       left: auto;
-      top: 20px;
+      top: 16px;
       display: inline; }
       header .add-climb span.add-link {
         display: none; }
@@ -540,13 +553,13 @@ form.edit .left {
       margin-top: 145px;
       display: block; }
     #modal .weather {
-      height: 120px; }
+      height: 132px; }
       #modal .weather .weather-inner {
         width: 250%; }
       #modal .weather .weather-hour {
         width: 20%;
         float: left;
-        height: 120px;
+        height: 132px;
         padding: 12px 20px; }
         #modal .weather .weather-hour p {
           margin-bottom: 0; }

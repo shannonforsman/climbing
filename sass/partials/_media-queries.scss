@@ -31,7 +31,7 @@
       right: 24px;
       font-size: 42px;
       left: auto;
-      top: 20px;
+      top: 16px;
       display: inline;
       span.add-link {
         display: none;
@@ -73,14 +73,14 @@
     }
 
     .weather {
-      height: 120px;
+      height: 132px;
       .weather-inner {
         width: 250%;
       }
       .weather-hour {
         width: 20%;
         float: left;
-        height: 120px;
+        height: 132px;
         padding: 12px 20px;
         p {
           margin-bottom: 0;
