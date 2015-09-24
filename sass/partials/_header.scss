@@ -1,3 +1,37 @@
+#home {
+  .close {
+    display: none;
+  }
+}
+
+#show .add-x {
+  .add-climb {
+    display: none;
+  }
+  .close {
+    display: block;
+    position: absolute;
+    right: 32px;
+    top: 24px;
+  }
+}
+
+
+
+#new-climb, #edit {
+  .close {
+    display: block;
+    position: absolute;
+    top: 24px;
+    right: 32px;
+  }
+  .add-climb {
+    display: none;
+  }
+}
+
+
+
 header {
   display: block;
   position: fixed;
@@ -5,6 +39,13 @@ header {
   width: 100%;
   background: $dark;
   top: 0;
+  .close {
+    display: none;
+    &:hover {
+      opacity: .6;
+      @include transition(all .3s ease);
+    }
+  }
   @include linearGradient($dark, darken($dark, 5));
 
   h1 {
@@ -21,6 +62,15 @@ header {
   .fa {
     float: right;
   }
+
+  .close {
+    float: right;
+    img {
+      height: 20px;
+      margin-top: 2px;
+    }
+  }
+
   .inner {
     width: 100%;
     position: relative;

@@ -15,7 +15,6 @@ app.controller('ClimbInfoController', ['$scope', 'ClimbMarkers', '$routeParams',
       MarkerObj.arr.forEach(function(el, index) {
         if (parseInt(el.id) === parseInt($routeParams.id)) {
           $scope.climbData = el
-          console.log(el)
           var long = $scope.climbData.geometry.coordinates[0]
           var lat = $scope.climbData.geometry.coordinates[1]
           $scope.indexOfClimb = index
@@ -45,6 +44,15 @@ app.controller('ClimbInfoController', ['$scope', 'ClimbMarkers', '$routeParams',
     var leftArrow = document.getElementsByClassName('nextImg')[0]
     var rightArrow = document.getElementsByClassName('nextImg')[1]
     var more = document.getElementById('more')
+    var header = document.getElementsByTagName('header')[0]
+    console.log(header)
+    // var add = document.getElementsByClassName('add-climb')[0]
+    header.classList.add('add-x')
+    // close.style.display = 'block'
+    // close.style.position = 'absolute'
+    // close.style.right = '32px'
+    // close.style.top = '20px'
+    // add.style.display = 'none'
 
     modal.style.height = '100vh'
     modal.style.paddingTop = '75px'

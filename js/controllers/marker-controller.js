@@ -3,6 +3,8 @@ app.controller('MarkerController', ['Path', '$scope', '$filter', '$location', 'C
   document.body.id = "home"
 
   $scope.showFilters = function() {
+
+    document.body.id = "home"
     var hide = document.querySelector('.hide')
     hide.classList.toggle('show')
     window.location="/#/climbs/"
@@ -16,6 +18,11 @@ app.controller('MarkerController', ['Path', '$scope', '$filter', '$location', 'C
       var show = document.querySelector('.show')
       show.classList.remove('show')
     }
+  }
+
+  $scope.closeModal = function() {
+    window.location="/#/climbs/"
+    document.body.id = "home"
   }
 
   $scope.path = function() {

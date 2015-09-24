@@ -217,6 +217,27 @@ body, html {
   width: 66%;
   float: left; }
 
+#home .close {
+  display: none; }
+
+#show .add-x .add-climb {
+  display: none; }
+
+#show .add-x .close {
+  display: block;
+  position: absolute;
+  right: 32px;
+  top: 24px; }
+
+#new-climb .close, #edit .close {
+  display: block;
+  position: absolute;
+  top: 24px;
+  right: 32px; }
+
+#new-climb .add-climb, #edit .add-climb {
+  display: none; }
+
 header {
   display: block;
   position: fixed;
@@ -240,6 +261,14 @@ header {
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
   /* IE6-9 */ }
+  header .close {
+    display: none; }
+    header .close:hover {
+      opacity: .6;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
   header h1 {
     color: #fff; }
   header .subtitle {
@@ -248,6 +277,11 @@ header {
     color: #fff; }
   header .fa {
     float: right; }
+  header .close {
+    float: right; }
+    header .close img {
+      height: 20px;
+      margin-top: 2px; }
   header .inner {
     width: 100%;
     position: relative;
@@ -509,6 +543,10 @@ form.edit .left {
     height: auto; }
     #show header .hide, #new-climb header .hide, #edit header .hide {
       display: none; }
+    #show header .close, #new-climb header .close, #edit header .close {
+      display: block; }
+    #show header .add-climb, #new-climb header .add-climb, #edit header .add-climb {
+      display: none; }
   #new-climb .content, #edit .content {
     width: 400px; }
   .content {
@@ -520,6 +558,8 @@ form.edit .left {
       text-align: left; }
     header .search {
       padding: 0 24px; }
+      header .search input {
+        text-align: left; }
     header .add-climb {
       position: absolute;
       right: 24px;
