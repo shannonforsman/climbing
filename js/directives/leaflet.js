@@ -9,9 +9,9 @@ app.directive('leafletDirective', function () {
     template: '<div></div>',
     link: function (scope, element, attrs) {
       var map = L.map(attrs.id, {
-        center: [40,-105.33],
+        center: [40,-105.38],
         zoomControl: false ,
-        zoom: 12
+        zoom: 13
       })
       new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 

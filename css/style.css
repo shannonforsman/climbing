@@ -556,10 +556,8 @@ form.edit .left {
     height: 100vh; }
     header .inner {
       text-align: left; }
-    header .search {
-      padding: 0 24px; }
-      header .search input {
-        text-align: left; }
+    header .search input {
+      text-align: left; }
     header .add-climb {
       position: absolute;
       right: 24px;
