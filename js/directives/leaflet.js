@@ -24,7 +24,7 @@ app.directive('leafletDirective', function () {
       var areaIcon = L.icon({
         iconUrl: '/images/marker.png',
         iconSize:     [31.5, 35], // size of the icon
-        iconAnchor:   [15, 0], // point of the icon which will correspond to marker's location
+        iconAnchor:   [15, 20], // point of the icon which will correspond to marker's location
         popupAnchor:  [-3, -76]
       });
 
