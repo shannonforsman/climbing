@@ -150,13 +150,14 @@ header {
         &:last-of-type label {
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
+          border-right: 0;
         }
         label {
           background: $very-dark;
           display: block;
           width: 33%;
           float: left;
-          padding: 12px 12px 14px;
+          padding: 8px 10px 10px;
           text-align: center;
           border-right: 2px solid $dark;
           &:hover {

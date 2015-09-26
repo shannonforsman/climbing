@@ -385,13 +385,14 @@ header {
       border-bottom-left-radius: 5px; }
     header .filter-options .radio-row .radio:last-of-type label {
       border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px; }
+      border-bottom-right-radius: 5px;
+      border-right: 0; }
     header .filter-options .radio-row .radio label {
       background: #20222D;
       display: block;
       width: 33%;
       float: left;
-      padding: 12px 12px 14px;
+      padding: 8px 10px 10px;
       text-align: center;
       border-right: 2px solid #2D3140; }
       header .filter-options .radio-row .radio label:hover {
