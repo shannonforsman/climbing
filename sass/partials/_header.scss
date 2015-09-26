@@ -92,6 +92,7 @@ header {
     background-color: $grey;
     form {
       z-index: 20;
+      position: relative;
       input {
         width: 100%;
         border: 0;
@@ -114,7 +115,10 @@ header {
         }
         &:focus {
           @include transition(.3s all ease);
-          background: lighten($mint, 10%);
+          background: lighten($dark, 60%);
+          @include input-placeholder {
+            color: transparent;
+          }
         }
       }
     }
@@ -132,6 +136,43 @@ header {
         color: lighten( $dark, 40% );
         float: left;
         font-weight: 300;
+      }
+    }
+    .radio-row {
+      width: auto;
+      margin-left: -12px;
+      margin-right: -12px;
+      .radio {
+        &:first-of-type label {
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+        &:last-of-type label {
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        label {
+          background: $very-dark;
+          display: block;
+          width: 33%;
+          float: left;
+          padding: 12px 12px 14px;
+          text-align: center;
+          border-right: 2px solid $dark;
+          &:hover {
+            background: lighten($very-dark, 1%);
+            color: lighten($dark, 50%);
+            @include transition(.3s all ease);
+            cursor: pointer;
+          }
+        }
+        input[type="radio"] {
+          display: none;
+          &:checked + label {
+            background: lighten($dark, 20%);
+            color: $white;
+          }
+        }
       }
     }
     .button {

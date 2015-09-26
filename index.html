@@ -25,16 +25,30 @@
   <div class="hide">
     <div class="inner">
     <form class="filter-options">
-      <div class="row">
-        <label class="half">
-          bouldering
-          <input type="checkbox" ng-model="search.properties.type" ng-true-value="'bouldering'" ng-false-value="'no'">
-        </label>
-        <label class="half">
-          sport
-          <input type="checkbox" ng-model="search.properties.type" ng-true-value="'sport'" ng-false-value="'no'">
-        </label>
+      <div class="row radio-row">
+        <section class="radio">
+          <input type="radio" id="sport" ng-model="search.properties.type" ng-value="'sport'">
+          <label for="sport">Sport</label>
+        </section>
+        <section class="radio">
+          <input type="radio" id="bouldering" ng-model="search.properties.type" ng-value="'bouldering'">
+          <label for="bouldering">Bouldering</label>
+        </section>
+        <section class="radio">
+          <input type="radio" id="all" ng-model="search.properties.type" ng-value="">
+          <label for="all">all</label>
+        </section>
       </div>
+<!--       <div class="row">
+  <label class="half">
+    bouldering
+    <input type="checkbox" ng-model="search.properties.type" ng-true-value="'bouldering'" ng-false-value="'no'">
+  </label>
+  <label class="half">
+    sport
+    <input type="checkbox" ng-model="search.properties.type" ng-true-value="'sport'" ng-false-value="'no'">
+  </label>
+</div> -->
       <div class="row">
         <label for="hike">Hike Length</label>
         <select id="hike" ng-model="search.properties.hikeLength" ng-init="search.properties.hikeLength=''">

@@ -301,7 +301,8 @@ header {
     position: relative;
     background-color: #43495F; }
     header .search form {
-      z-index: 20; }
+      z-index: 20;
+      position: relative; }
       header .search form input {
         width: 100%;
         border: 0;
@@ -354,7 +355,17 @@ header {
           -moz-transition: 0.3s all ease;
           -o-transition: 0.3s all ease;
           transition: 0.3s all ease;
-          background: #9be5cd; }
+          background: #c7cbd8; }
+          header .search form input:focus.placeholder {
+            color: transparent; }
+          header .search form input:focus:-moz-placeholder {
+            color: transparent; }
+          header .search form input:focus::-moz-placeholder {
+            color: transparent; }
+          header .search form input:focus:-ms-input-placeholder {
+            color: transparent; }
+          header .search form input:focus::-webkit-input-placeholder {
+            color: transparent; }
     header .search .fa {
       position: absolute;
       top: 10px;
@@ -365,6 +376,37 @@ header {
     color: #8b93ae;
     float: left;
     font-weight: 300; }
+  header .filter-options .radio-row {
+    width: auto;
+    margin-left: -12px;
+    margin-right: -12px; }
+    header .filter-options .radio-row .radio:first-of-type label {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px; }
+    header .filter-options .radio-row .radio:last-of-type label {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px; }
+    header .filter-options .radio-row .radio label {
+      background: #20222D;
+      display: block;
+      width: 33%;
+      float: left;
+      padding: 12px 12px 14px;
+      text-align: center;
+      border-right: 2px solid #2D3140; }
+      header .filter-options .radio-row .radio label:hover {
+        background: #222430;
+        color: #a9afc3;
+        -webkit-transition: 0.3s all ease;
+        -moz-transition: 0.3s all ease;
+        -o-transition: 0.3s all ease;
+        transition: 0.3s all ease;
+        cursor: pointer; }
+    header .filter-options .radio-row .radio input[type="radio"] {
+      display: none; }
+      header .filter-options .radio-row .radio input[type="radio"]:checked + label {
+        background: #575f7c;
+        color: #fff; }
   header .filter-options .button {
     background: transparent;
     outline: none;
