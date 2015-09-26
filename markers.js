@@ -4,9 +4,6 @@ app.factory('ClimbMarkers', ['$http', '$q', '$route', '$location', function ($ht
   var climbs = {}
 
   climbs.get = function () {
-    console.log($location)
-    console.log('route', $route.routes['/climbs'])
-
     var deferred = $q.defer()
     $http.get(link).success(function (data) {
       deferred.resolve(data)
@@ -18,7 +15,6 @@ app.factory('ClimbMarkers', ['$http', '$q', '$route', '$location', function ($ht
 
   climbs.post = function(obj) {
     $http.post(link, obj).then(function(response){
-
       $route.reload()
     })
   }
@@ -34,7 +30,6 @@ app.factory('ClimbMarkers', ['$http', '$q', '$route', '$location', function ($ht
     $http.post(link, {'id': id}).then(function(response) {
     })
     window.location="/#/climbs/"
-
   }
   return climbs
 

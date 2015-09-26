@@ -17,6 +17,7 @@
     <h3 class="subtitle">find your favorite climbing area</h3>
   </div>
   <div class="search" ng-show="path()">
+    <i class="fa fa-search"></i>
     <form>
       <input ng-model="search.properties.name" placeholder="area name search"/>
     </form>
@@ -74,7 +75,7 @@
           <input type="checkbox" ng-model="search.properties.popular" ng-true-value="true" ng-false-value="false">
         </label>
       </div>
-      <button ng-click=reset() class="button">Reset</button>
+      <button ng-click=reset() class="button"><i class="fa fa-refresh"></i> Reset</button>
     </form>
     </div>
   </div>

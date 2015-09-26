@@ -276,7 +276,9 @@ header {
   header a {
     color: #fff; }
   header .fa {
-    float: right; }
+    float: left;
+    line-height: 20px;
+    margin-right: 4px; }
   header .close {
     float: right; }
     header .close img {
@@ -295,48 +297,71 @@ header {
       padding-bottom: 70px; }
       header .hide.show .inner {
         padding-bottom: 42px; }
-  header .search input {
-    width: 100%;
-    border: 0;
-    padding: 10px 20px;
-    background-color: #43495F;
-    text-align: center;
-    outline: none;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 4px;
-    color: #c7cbd8; }
-    header .search input.placeholder {
-      color: #8b93ae;
-      font-family: 'news cycle';
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-size: 12px; }
-    header .search input:-moz-placeholder {
-      color: #8b93ae;
-      font-family: 'news cycle';
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-size: 12px; }
-    header .search input::-moz-placeholder {
-      color: #8b93ae;
-      font-family: 'news cycle';
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-size: 12px; }
-    header .search input:-ms-input-placeholder {
-      color: #8b93ae;
-      font-family: 'news cycle';
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-size: 12px; }
-    header .search input::-webkit-input-placeholder {
-      color: #8b93ae;
-      font-family: 'news cycle';
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-size: 12px; }
-  header .filter-options label {
+  header .search {
+    position: relative;
+    background-color: #43495F; }
+    header .search form {
+      z-index: 20; }
+      header .search form input {
+        width: 100%;
+        border: 0;
+        padding: 12px 20px;
+        background-color: transparent;
+        text-align: left;
+        outline: none;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 4px;
+        color: #2D3140;
+        font-weight: bold; }
+        header .search form input.placeholder {
+          color: #8b93ae;
+          font-family: 'news cycle';
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: 100; }
+        header .search form input:-moz-placeholder {
+          color: #8b93ae;
+          font-family: 'news cycle';
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: 100; }
+        header .search form input::-moz-placeholder {
+          color: #8b93ae;
+          font-family: 'news cycle';
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: 100; }
+        header .search form input:-ms-input-placeholder {
+          color: #8b93ae;
+          font-family: 'news cycle';
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: 100; }
+        header .search form input::-webkit-input-placeholder {
+          color: #8b93ae;
+          font-family: 'news cycle';
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: 100; }
+        header .search form input:focus {
+          -webkit-transition: 0.3s all ease;
+          -moz-transition: 0.3s all ease;
+          -o-transition: 0.3s all ease;
+          transition: 0.3s all ease;
+          background: #9be5cd; }
+    header .search .fa {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      z-index: 10;
+      color: #8b93ae; }
+  header .filter-options .row label {
     color: #8b93ae;
     float: left;
     font-weight: 300; }
@@ -346,6 +371,12 @@ header {
     border-bottom: 2px solid;
     border-radius: 0;
     width: auto; }
+    header .filter-options .button:hover {
+      opacity: .6;
+      -webkit-transition: 0.3s all ease;
+      -moz-transition: 0.3s all ease;
+      -o-transition: 0.3s all ease;
+      transition: 0.3s all ease; }
 
 #modal {
   position: absolute;
@@ -514,9 +545,7 @@ form {
     margin-bottom: 12px; }
 
 header form .row select {
-  background-color: #c7cbd8;
-  /*     outline: none;
- */ }
+  background-color: #c7cbd8; }
 
 header form .row label.half {
   text-align: left; }

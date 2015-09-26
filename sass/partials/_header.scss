@@ -16,8 +16,6 @@
   }
 }
 
-
-
 #new-climb, #edit {
   .close {
     display: block;
@@ -29,8 +27,6 @@
     display: none;
   }
 }
-
-
 
 header {
   display: block;
@@ -60,7 +56,9 @@ header {
     color: $white;
   }
   .fa {
-    float: right;
+    float: left;
+    line-height: 20px;
+    margin-right: 4px;
   }
 
   .close {
@@ -90,39 +88,62 @@ header {
   }
 
   .search {
-    input {
-      width: 100%;
-      border: 0;
-      padding: 10px 20px;
-      background-color: $grey;
-      text-align: center;
-      outline: none;
-      text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: 4px;
-      color: lighten( $dark, 60% );
-      @include input-placeholder {
-        color: lighten( $dark, 40% );
-        font-family: 'news cycle';
-        letter-spacing: 4px;
+    position: relative;
+    background-color: $grey;
+    form {
+      z-index: 20;
+      input {
+        width: 100%;
+        border: 0;
+        padding: 12px 20px;
+        background-color: transparent;
+        text-align: left;
+        outline: none;
         text-transform: uppercase;
         font-size: 12px;
+        letter-spacing: 4px;
+        color: $dark;
+        font-weight: bold;
+        @include input-placeholder {
+          color: lighten( $dark, 40% );
+          font-family: 'news cycle';
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: 100;
+        }
+        &:focus {
+          @include transition(.3s all ease);
+          background: lighten($mint, 10%);
+        }
       }
+    }
+    .fa {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      z-index: 10;
+      color: lighten( $dark, 40% );
     }
   }
   .filter-options {
-    label {
-      color: lighten( $dark, 40% );
-      float: left;
-      font-weight: 300;
+    .row {
+      label {
+        color: lighten( $dark, 40% );
+        float: left;
+        font-weight: 300;
+      }
     }
     .button {
-      background: transparent;
-      outline: none;
-      border-bottom: 2px solid;
-      border-radius: 0;
-      width: auto;
+        background: transparent;
+        outline: none;
+        border-bottom: 2px solid;
+        border-radius: 0;
+        width: auto;
+      &:hover {
+        opacity: .6;
+        @include transition(.3s all ease);
+      }
     }
   }
-
 }
