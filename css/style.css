@@ -590,7 +590,7 @@ form {
       -webkit-appearance: none;
       -moz-appearance: none;
       -webkit-border-radius: 3px;
-      padding: 6px;
+      padding: 6px 12px;
       margin: 0;
       background: #fff;
       color: #888;
@@ -613,7 +613,7 @@ form {
       font-size: 11px;
       color: #2D3140;
       line-height: 24px;
-      right: 8px;
+      right: 12px;
       top: 2px;
       padding: 0 0 2px;
       position: absolute;
