@@ -458,15 +458,15 @@ header {
     position: absolute;
     color: red;
     top: 164px;
-    width: 50px;
-    height: 40px;
+    width: 100%;
+    height: 200px;
     font-weight: bold;
     background-image: url("/images/down-arrow.png");
     background-size: 40px;
     background-repeat: no-repeat;
-    margin-left: 50%;
-    left: -20px;
-    cursor: pointer; }
+    cursor: pointer;
+    top: 0;
+    background-position: center 161px; }
     #modal #more:hover {
       opacity: .6;
       -webkit-transition: all 0.3s ease;
@@ -505,14 +505,19 @@ header {
     width: 100%;
     height: 200px;
     background-size: cover;
-    background-position: center; }
+    background-position: center;
+    background-color: #eee; }
   #modal .nextImg {
     display: none; }
 
 .weather {
+  position: relative;
   width: 100%;
   overflow-y: scroll;
-  height: 108px; }
+  height: 108px;
+  background: #eee; }
+  .weather .weather-inner {
+    background: #eee; }
   .weather .weather-hour {
     background: #eee;
     border-bottom: 4px solid #fff;
@@ -580,15 +585,48 @@ form {
       border: none;
       width: 50%;
       float: right;
-      margin-top: 4px; }
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -webkit-border-radius: 3px;
+      padding: 8px;
+      margin: 0;
+      background: #fff;
+      color: #888;
+      border: none;
+      outline: none;
+      display: inline-block;
+      appearance: none;
+      cursor: pointer;
+      width: 150px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      border-radius: 0px;
+      color: #2D3140;
+      letter-spacing: 2px;
+      font-weight: bold; }
+    form .row #arrow {
+      position: relative; }
+    form .row #arrow:after {
+      content: "\f078";
+      font-family: "FontAwesome";
+      font-size: 11px;
+      color: #2D3140;
+      line-height: 24px;
+      right: 8px;
+      top: 2px;
+      padding: 0 0 2px;
+      position: absolute;
+      pointer-events: none; }
     form .row label.class {
       margin-right: 0;
       float: left; }
-  form .image input {
-    margin-bottom: 12px; }
+
+.image input {
+  margin-bottom: 12px; }
 
 header form .row select {
-  background-color: #c7cbd8; }
+  background-color: #c7cbd8;
+  margin-top: -2px; }
 
 header form .row label.half {
   text-align: left; }

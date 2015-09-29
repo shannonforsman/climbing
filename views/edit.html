@@ -80,7 +80,7 @@
       <label>images</label>
       <div class="images" ng-repeat="img in currentClimb.images">
         <img ng-src="{{img.url}}" alt="">
-        <input type="url" ng-model="img.url" value="{{img.url}}"><a class="left" ng-click="deleteImage(img.id)">delete</a>
+        <input type="text" ng-model="img.url" value="{{img.url}}"><a class="left" ng-click="deleteImage(img.id)">delete</a>
       </div>
       <div ng-repeat="img in imgArr" ng-show="!currentClimb.images">
         <img ng-src="{{img.url}}" alt="">

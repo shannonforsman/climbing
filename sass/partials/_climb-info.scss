@@ -23,15 +23,15 @@
     position: absolute;
     color: red;
     top: 164px;
-    width: 50px;
-    height: 40px;
+    width: 100%;
+    height: 200px;
     font-weight: bold;
     background-image: url("/images/down-arrow.png");
     background-size: 40px;
     background-repeat: no-repeat;
-    margin-left: 50%;
-    left: -20px;
     cursor: pointer;
+    top: 0;
+    background-position: center 161px;
     &:hover {
       opacity: .6;
       @include transition(all 0.3s ease);
@@ -80,15 +80,21 @@
     height: 200px;
     background-size: cover;
     background-position: center;
+    background-color: #eee;
   }
   .nextImg {
     display: none;
   }
 }
 .weather {
+  position: relative;
   width: 100%;
   overflow-y: scroll;
   height: 108px;
+  background: #eee;
+  .weather-inner {
+    background: #eee;
+  }
   .weather-hour {
     background: #eee;
     border-bottom: 4px solid $white;

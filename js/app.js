@@ -1,1 +1,1 @@
-var app = angular.module('climbingApp', ['ngRoute'])
+var app = angular.module('climbingApp', ['ngRoute', 'ngDropdowns'])

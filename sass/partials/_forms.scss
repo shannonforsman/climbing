@@ -28,11 +28,50 @@ form {
       border: none;
       width: 50%;
       float: right;
-      margin-top: 4px;
+      -webkit-appearance:none;
+      -moz-appearance:none;
+      -webkit-border-radius: 3px;
+      padding: 8px;
+      margin: 0;
+      background: #fff;
+      color:#888;
+      border:none;
+      outline:none;
+      display: inline-block;
+      appearance:none;
+      cursor:pointer;
+      width: 150px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      border-radius: 0px;
+      color: $dark;
+      letter-spacing: 2px;
+      font-weight: bold;
     }
+    #arrow {position:relative}
+    #arrow:after {
+        content:"\f078";
+        font-family: "FontAwesome";
+        font-size: 11px;
+        color:$dark;
+        line-height: 24px;
+        right:8px;
+        top:2px;
+        padding:0 0 2px;
+        position:absolute;
+        pointer-events:none;
+    }
+
+
     label.class {
       margin-right: 0;
+
       float: left;
+    }
+
+
+
+
     }
   }
   .image {
@@ -40,11 +79,12 @@ form {
       margin-bottom: 12px;
     }
   }
-}
+
 
 header form {
   .row select {
     background-color: lighten($dark, 60);
+    margin-top: -2px;
   }
   .row label.half {
     text-align: left;

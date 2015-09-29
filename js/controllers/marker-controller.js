@@ -70,6 +70,53 @@ app.controller('MarkerController', ['Path', '$scope', '$filter', '$location', 'C
       }
     }, true)
   })
+
+  // $scope.ddSelectOptions = [
+  //     {
+  //         text: 'Option1',
+  //         value: 'a value'
+  //     },
+  //     {
+  //         text: 'Option2',
+  //         value: 'another value',
+  //         someprop: 'somevalue'
+  //     },
+  //
+  //     {
+  //         // Any divider option with a 'text' property will
+  //         // behave similarly to a divider and cannot be selected.
+  //         divider: true,
+  //         text: 'divider label'
+  //     },
+  //     {
+  //         // Example of an option with the 'href' property
+  //         text: 'Option4',
+  //         href: '#option4'
+  //     }
+  // ];
+
+
+  // $scope.ddSelectSelected = {}; // Must be an object
+
+
+    $scope.ddSelectOptions = [
+        {
+            text: 'Beginner',
+            value: 'Beginner'
+        },
+        {
+            text: 'Intermediate',
+            value: 'Intermediate'
+        },
+        {
+            text: 'Expert',
+            value: 'Expert'
+        }
+    ];
+    $scope.ddSelectSelected = {
+       text: "Select an Option"
+     };
+
 }])
 
 
