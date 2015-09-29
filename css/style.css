@@ -588,7 +588,7 @@ form {
       -webkit-appearance: none;
       -moz-appearance: none;
       -webkit-border-radius: 3px;
-      padding: 8px;
+      padding: 6px;
       margin: 0;
       background: #fff;
       color: #888;
@@ -625,8 +625,7 @@ form {
   margin-bottom: 12px; }
 
 header form .row select {
-  background-color: #c7cbd8;
-  margin-top: -2px; }
+  background-color: #c7cbd8; }
 
 header form .row label.half {
   text-align: left; }

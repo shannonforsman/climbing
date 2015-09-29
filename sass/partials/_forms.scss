@@ -31,7 +31,7 @@ form {
       -webkit-appearance:none;
       -moz-appearance:none;
       -webkit-border-radius: 3px;
-      padding: 8px;
+      padding: 6px;
       margin: 0;
       background: #fff;
       color:#888;
@@ -62,18 +62,12 @@ form {
         pointer-events:none;
     }
 
-
     label.class {
       margin-right: 0;
-
       float: left;
     }
-
-
-
-
-    }
   }
+}
   .image {
     input {
       margin-bottom: 12px;
@@ -84,7 +78,6 @@ form {
 header form {
   .row select {
     background-color: lighten($dark, 60);
-    margin-top: -2px;
   }
   .row label.half {
     text-align: left;
