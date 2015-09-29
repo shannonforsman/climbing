@@ -46,15 +46,10 @@ app.controller('ClimbInfoController', ['$scope', 'ClimbMarkers', '$routeParams',
     var more = document.getElementById('more')
     var header = document.getElementsByTagName('header')[0]
     console.log(header)
-    // var add = document.getElementsByClassName('add-climb')[0]
+    
     header.classList.add('add-x')
-    // close.style.display = 'block'
-    // close.style.position = 'absolute'
-    // close.style.right = '32px'
-    // close.style.top = '20px'
-    // add.style.display = 'none'
 
-    modal.style.height = '100vh'
+    modal.style.height = '100%'
     modal.style.paddingTop = '75px'
     modal.style.overflow = 'scroll'
 
