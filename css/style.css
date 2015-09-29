@@ -581,6 +581,8 @@ form {
       display: inline;
       width: auto;
       float: none; }
+    form .row label.left {
+      float: left; }
     form .row select {
       border: none;
       width: 50%;
@@ -597,7 +599,6 @@ form {
       display: inline-block;
       appearance: none;
       cursor: pointer;
-      width: 150px;
       -webkit-border-radius: 0px;
       -moz-border-radius: 0px;
       border-radius: 0px;

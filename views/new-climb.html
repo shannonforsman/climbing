@@ -27,22 +27,26 @@
       </label>
     </div>
     <div class="row border">
-      <label for="hike">Hike Length</label>
-      <select id="hike" ng-model="climb.hikeLength" ng-init="climb.hikeLength='select'">
-        <option value="select">select</option>
-        <option value="short">short</option>
-        <option value="medium">medium</option>
-        <option value="long">long</option>
-      </select>
+      <label for="hike" class="left">Hike Length</label>
+      <div id="arrow">
+        <select id="hike" ng-model="climb.hikeLength" ng-init="climb.hikeLength='select'">
+          <option value="select">select</option>
+          <option value="short">short</option>
+          <option value="medium">medium</option>
+          <option value="long">long</option>
+        </select>
+      </div>
     </div>
     <div class="row border">
-      <label for="size">Area Size</label>
-      <select id="size" ng-model="climb.size" ng-init="climb.size='select'">
-        <option value="select">select</option>
-        <option value="small">small</option>
-        <option value="medium">medium</option>
-        <option value="large">large</option>
-      </select>
+      <label for="size" class="left">Area Size</label>
+      <div id="arrow">
+        <select id="size" ng-model="climb.size" ng-init="climb.size='select'">
+          <option value="select">select</option>
+          <option value="small">small</option>
+          <option value="medium">medium</option>
+          <option value="large">large</option>
+        </select>
+      </div>
     </div>
     <div class="row border">
       <label class="half">
@@ -56,12 +60,14 @@
     </div>
     <div class="row border">
       <label for="level">Climbing Level</label>
-      <select id="level" ng-model="climb.level" ng-init="climb.level='all'">
-        <option value="all">all</option>
-        <option value="Beginner">beginner</option>
-        <option value="intermediate">Intermediate</option>
-        <option value="expert">Expert</option>
-      </select>
+      <div id="arrow">
+        <select id="level" class="left" ng-model="climb.level" ng-init="climb.level='all'">
+          <option value="all">all</option>
+          <option value="Beginner">beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="expert">Expert</option>
+        </select>
+      </div>
     </div>
     <div class="row border">
       <label for="popular">Popular Area</label>
