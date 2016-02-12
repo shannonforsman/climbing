@@ -3,7 +3,6 @@ app.controller('MarkerController', ['Path', '$scope', '$filter', '$location', 'C
   document.body.id = "home"
 
   $scope.showFilters = function() {
-
     document.body.id = "home"
     var hide = document.querySelector('.hide')
     hide.classList.toggle('show')
@@ -31,12 +30,10 @@ app.controller('MarkerController', ['Path', '$scope', '$filter', '$location', 'C
 
   ClimbMarkers.get()
   .then(function (markers) {
+
     MarkerObj.arr = markers
-
     $scope.source = MarkerObj.arr
-
     $scope.data = MarkerObj.arr
-
     $scope.search = {
         'properties': {}
     }
@@ -70,89 +67,4 @@ app.controller('MarkerController', ['Path', '$scope', '$filter', '$location', 'C
       }
     }, true)
   })
-
-  // $scope.ddSelectOptions = [
-  //     {
-  //         text: 'Option1',
-  //         value: 'a value'
-  //     },
-  //     {
-  //         text: 'Option2',
-  //         value: 'another value',
-  //         someprop: 'somevalue'
-  //     },
-  //
-  //     {
-  //         // Any divider option with a 'text' property will
-  //         // behave similarly to a divider and cannot be selected.
-  //         divider: true,
-  //         text: 'divider label'
-  //     },
-  //     {
-  //         // Example of an option with the 'href' property
-  //         text: 'Option4',
-  //         href: '#option4'
-  //     }
-  // ];
-
-
-  // $scope.ddSelectSelected = {}; // Must be an object
-
-
-    $scope.ddSelectOptions = [
-        {
-            text: 'Beginner',
-            value: 'Beginner'
-        },
-        {
-            text: 'Intermediate',
-            value: 'Intermediate'
-        },
-        {
-            text: 'Expert',
-            value: 'Expert'
-        }
-    ];
-    $scope.ddSelectSelected = {
-       text: "Select an Option"
-     };
-
 }])
-
-
-
-// app.controller('MarkerController', ['$scope', '$filter', 'ClimbMarkers', 'MarkerObj', function ($scope, $filter, ClimbMarkers, MarkerObj) {
-//   ClimbMarkers.get()
-//   .then(function (markers) {
-//     console.log(markers)
-//     $scope.source = MarkerObj.arr
-//
-//     $scope.data = angularcopy
-//     $scope.search = {
-//       'properties': {}
-//     }
-//
-//     console.log('marker', MarkerObj)
-//
-//     $scope.allTypes = function () {
-//       delete $scope.search.properties.type
-//     }
-//
-//     $scope.$watch('data', function (newVal, oldVal) {
-//       if (newVal !== oldVal) {
-//         $scope.data = newVal
-//         $scope.source = newVal
-//       }
-//     })
-//
-//     $scope.$watch('search', function (newVal, oldVal) {
-//       if ($scope.search.properties.type === 'no') {
-//         delete $scope.search.properties.type
-//       }
-//       if (newVal !== oldVal) {
-//         $scope.data = $filter('filter')($scope.source, $scope.search)
-//       }
-//     }, true)
-//   //
-//   })
-// }])
